@@ -340,3 +340,177 @@ body, html {
   overflow-wrap: anywhere;
   max-width: 90%;            /* 横のはみ出し防止 */
 }
+/* iPhone 横画面（16:9前提）最適化スタイル */
+/* 置き場所：design.css を置き換え or 末尾に追記して上書き */
+
+/* ----------------------
+  ベース・ビューポート対策
+----------------------- */
+:root{
+  /* ホットスポット/文字サイズの基準スケール */
+  --spot-size: clamp(36px, 4.5vw, 56px);
+  --font-base: clamp(12px, 1.6vw, 16px);
+}
+
+/* iOS Safari の動的ツールバー対策：svh/dvh を優先 */
+html, body {
+  margin: 0; padding: 0;
+  width: 100dvw; height: 100dvh;
+  background: #191f2b;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Meiryo', 'Segoe UI', '游ゴシック', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* ----------------------
+  ステージ：常時 16:9 を厳守
+----------------------- */
+#game-container{
+  position: relative;
+  /* 画面いっぱいにフィットしつつ 16:9 を維持 */
+  width: min(100dvw, 177.78dvh);   /* 16:9 換算 = 16/9 * 100vh */
+  aspect-ratio: 16 / 9;
+  max-height: 100dvh;
+  background: linear-gradient(160deg,#191f2b 70%,#283c62 100%);
+  border-radius: 12px;
+  box-shadow: 0 0 40px #000a, 0 0 0 4px #3869bb55;
+  overflow: hidden;
+}
+
+/* 旧指定（幅 min(96vw,960px) / 高さ min(60vw,540px)）は無効化する想定 */
+
+/* ----------------------
+  マップ領域（上段）
+----------------------- */
+#map-area{
+  position: relative;
+  width: 100%;
+  height: 72%;                 /* 横画面ではやや広めに */
+  background: #0d141f;
+  overflow: hidden;
+}
+#map-bg{
+  position: absolute; inset: 0; margin: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;           /* 背景が黒帯なく埋まる */
+}
+#map-canvas{ pointer-events: none; }
+
+/* ----------------------
+  テキストボックス（下段）
+----------------------- */
+#text-box{
+  position: absolute; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 28%;
+  background: rgba(0,0,0,.65);
+  border-top: 4px solid #4e7cc7;
+  color: #fff;
+  padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
+  font-size: var(--font-base);
+  line-height: 1.6;
+  display: flex; flex-direction: column; gap: 8px;
+  overflow: hidden;            /* 伸縮防止 */
+}
+#type-text{
+  white-space: pre-wrap; overflow-wrap: anywhere;
+  overflow-y: auto; flex: 1 1 auto;
+}
+.text-hint{ font-size: clamp(10px, 1.2vw, 12px); color: #9bbcff; opacity: .85; }
+#auto-badge{ display:inline-block; margin-left: 8px; padding: 2px 8px; font-size: 11px; border-radius: 999px; background:#335a9e; }
+#auto-badge[hidden]{ display:none; }
+
+/* ----------------------
+  メニューボタン & モーダル
+----------------------- */
+#menu-btn{
+  position: absolute; z-index: 100;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+  background: rgba(35,42,56,0.9);
+  color: #8dd3ff;
+  border: 2px solid #31498c;
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 18px; cursor: pointer;
+}
+#menu-modal-bg[hidden]{ display:none; }
+#menu-modal-bg{
+  position: fixed; inset: 0; z-index: 120000;
+  background: rgba(10,14,22,.55);
+  display: grid; place-items: center;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+#menu-modal{ z-index: 120001; width: min(92dvw, 720px); max-height: 90dvh; overflow: hidden; background:#1f2736; color:#e9f1ff; border-radius: 12px; }
+.menu-panels{ padding: 12px; overflow-y: auto; max-height: calc(90dvh - 96px); }
+
+/* ----------------------
+  選択肢（ゲーム画面重ね）
+----------------------- */
+#choices-layer{
+  position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%);
+  width: 90%; display: none; grid-template-columns: 1fr; gap: 8px;
+  z-index: 97000; pointer-events: auto;
+}
+.choice-btn{
+  background: #355d9b; border: 1px solid #4e7cc7; color: #fff;
+  border-radius: 8px; padding: 8px 12px; font-size: var(--font-base); cursor: pointer;
+}
+#choices-layer .choice-btn:hover{ background: rgba(78,124,199,.8); border-color: rgba(255,255,255,.4); transform: scale(1.03); transition: .15s; }
+
+/* ----------------------
+  ホットスポット類
+----------------------- */
+#hotspot{ position:absolute; width: var(--spot-size); height: var(--spot-size); left:50%; top:62%; transform: translate(-50%,-50%); transform-origin:center; cursor:pointer; image-rendering: pixelated; animation: twinkle 1.1s ease-in-out infinite; z-index: 9999; }
+#hotspot[hidden]{ display:none; }
+#hotspot-layer{ position:absolute; inset:0; z-index:90000; pointer-events:none; }
+#hotspot-layer .spot{ position:absolute; transform: translate(-50%,-50%); width: var(--spot-size); height: var(--spot-size); pointer-events:auto; cursor:pointer; image-rendering: pixelated; }
+#hotspot-layer .spot.done{ opacity:.8; }
+#hotspot-layer .spot:hover{ transform: translate(-50%,-50%) scale(1.05); }
+
+@keyframes twinkle{ 0%,100%{opacity:.75} 50%{opacity:1} }
+
+/* ----------------------
+  立ち絵/一枚絵オーバーレイ
+----------------------- */
+#overlay{
+  position: fixed; left:50%; top:50%; transform: translate(-50%,-50%);
+  z-index: 100000; image-rendering: pixelated; cursor: pointer;
+  max-width: 92dvw; max-height: 88dvh;
+}
+#overlay[hidden]{ display:none; }
+
+/* ----------------------
+  ステータス/設定など（既存クラスの微調整）
+----------------------- */
+.settings-grid .row{ display:grid; grid-template-columns: 1fr auto; align-items:center; gap:12px; padding:8px 10px; background:#22304a; border-radius:10px; }
+.settings-actions{ display:flex; gap:10px; margin-top:10px; }
+.settings-actions button{ background:#3f69b1; color:#fff; border:1px solid #4e7cc7; padding:8px 12px; border-radius:10px; cursor:pointer; }
+
+/* INFO パネル分割幅維持 */
+.info-wrap{ display:grid; grid-template-columns: 240px 1fr; gap: 12px; }
+.info-detail img{ height: 200px; width:auto; max-width:none; image-rendering: pixelated; display:block; margin: 0 auto; }
+
+/* ----------------------
+  画面の揺れ演出（既存クラス想定）
+----------------------- */
+#game-container.is-quaking{ animation: quake .14s linear 0s 10; }
+@keyframes quake{ 0%{ transform:translateX(0) } 25%{ transform:translateX(-2px) } 50%{ transform:translateX(0) } 75%{ transform:translateX(2px) } 100%{ transform:translateX(0) } }
+/* --- iPhone横でのマップ画像ずれ補正（強制上書き） --- */
+#map-area > #map-bg {
+  position: absolute !important;
+  inset: 0 !important;         /* 四辺ぴったり */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;     /* 16:9枠いっぱいに拡大・はみ出しは中央でトリム */
+  object-position: center center !important; /* トリムの基準を中央に固定 */
+  display: block;
+}
+
+/* Canvas も画像と同じ領域にフィットさせる */
+#map-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
