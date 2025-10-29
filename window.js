@@ -741,11 +741,15 @@ function clearOverlay() {
   stageClickEnabled = false;
 }
 
-// 画面サイズや #map-area にフィットさせるためのレイアウト調整
 function laあなたtOverlay() {
   if (!overlay || !mapArea) return;
   const mapR = mapArea.getBoundingClientRect();
-  const txtR = textBox ? textBox.getBoundingClientRect() : null;
+
+  // ← ここがポイント：ボックスの“上端”を基準にする
+  const textBoxWrap = document.querySelector("#text-box");
+  const boxR = (textBoxWrap && textBoxWrap.style.display !== "none")
+    ? textBoxWrap.getBoundingClientRect()
+    : null;
 
   // サイズ上限（親にフィット）
   const maxH = Math.max(160, Math.floor(mapR.height * 0.65)); // 親の65%
@@ -753,18 +757,19 @@ function laあなたtOverlay() {
   overlay.style.maxHeight = `${maxH}px`;
   overlay.style.maxWidth  = `${maxW}px`;
 
-  // 画像実寸を取得（スタイル反映後の高さ）
+  // 実寸（反映後）
   const h = overlay.getBoundingClientRect().height || maxH;
 
-  // テキストボックスの上面に接するように配置
-  if (txtR) {
-    // ビューポート基準（overlay は position: fixed）
-    const desiredTop = mapR.bottom-h;
-    overlay.style.top = `${desiredTop}px`;
-    // 横方向は従来どおり center ベース（left は既存値を尊重）
-    overlay.style.transform = "translateX(-50%)"; // Y はピクセル指定に任せる
-  }
+  // 🔧 下端を text-box 上端に“接する”ように配置
+  //    text-box が非表示（探索モードなど）のときは map 底に合わせる
+  const pad = 0; // もし数px空けたいなら 4 や 8 に
+  const targetTop = boxR ? (boxR.top - h - pad) : (mapR.bottom - h - pad);
+
+  overlay.style.top = `${targetTop}px`;
+  overlay.style.transform = "translateX(-50%)"; // 横は中央基準のまま
 }
+
+
 
 // === 探索アイコン・立ち絵の自動スケール ===
 function laあなたtSpots() {
@@ -905,12 +910,26 @@ if (node.fx === "quake") quake(node.fxMs || 1400);
       showOverlay(node.overlay.sprite, node.overlay.size || "320px", { block: false });
     }
 
-    if (node.explore) {
-      if (node.ui?.silent) { if (textBox) { textBox.textContent = ""; typing = false; } }
-      else { typing = true; typeWriter(node.text || "", () => { typing = false; }); }
-      renderExplore(node);
-      return;
-    }
+   if (node.explore) {
+  // 探索モードに入ったらテキストボックスを非表示
+  const textBoxWrap = document.querySelector("#text-box");
+  if (textBoxWrap) textBoxWrap.style.display = "none";
+
+  if (node.ui?.silent) {
+    if (textBox) { textBox.textContent = ""; typing = false; }
+  } else {
+    typing = true;
+    typeWriter(node.text || "", () => { typing = false; });
+  }
+
+  renderExplore(node);
+  return;
+} else {
+  // 通常モードではテキストボックスを再表示
+  const textBoxWrap = document.querySelector("#text-box");
+  if (textBoxWrap) textBoxWrap.style.display = "";
+}
+
     // typeWriterの直前あたり
       awaitingChoices = Array.isArray(node.choices) && node.choices.length > 0;
 
@@ -1052,13 +1071,13 @@ if (!choicesLayer && mapArea) {
   choicesLayer.id = "choices-layer";
   Object.assign(choicesLayer.style, {
     position: "absolute",
-    left: "50%",
-    bottom: "8%",                 // 画面内の出し位置（好みで）
-    transform: "translateX(-50%)",
+    left: "75%",
+    top: "20%",                 // 画面内の出し位置（好みで）
+    transform: "translate(-50%)",    // ← 横・縦とも中央基準に,
     width: "90%",
     display: "none",
     gridTemplateColumns: "1fr",
-    gap: "8px",
+    gap: "3px",
     zIndex: "97000",
     pointerEvents: "auto",
   });
@@ -1248,8 +1267,10 @@ function showChoicesInMap(node) {
     btn.textContent = choice.label;
 
     Object.assign(btn.style, {
-      padding: "10px 12px",
-      fontSize: "16px",
+      width:"500px",
+      height:"60px",
+      padding: "14px 18px",
+      fontSize: "18px",
       borderRadius: "10px",
       background: "rgba(0,0,0,0.45)",
       color: "#fff",

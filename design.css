@@ -514,3 +514,72 @@ html, body {
   height: 100%;
   pointer-events: none;
 }
+/* ======== MAP 背景を必ずフルフィットさせる最終上書き ======== */
+
+/* 1) <img id="map-bg"> を完全固定（旧 transform を無効化） */
+#map-area > #map-bg {
+  position: absolute !important;
+  inset: 0 !important;                 /* 四辺ぴったり */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;        /* 枠いっぱいにカバー */
+  object-position: center 60% !important; /* 見せたい位置。50%～65%でお好み調整可 */
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;          /* ← コレが一番大事 */
+  margin: 0 !important;
+  display: block !important;
+  background-color: #0d141f !important; /* 読み込み中のチラつき対策 */
+}
+
+/* 2) JSが作る背景レイヤ(div)も想定して全面フィット */
+#map-area > #bg-layer,
+#map-area > .bg-layer,
+#map-area > [data-role="bg-layer"] {
+  position: absolute !important;
+  inset: 0 !important;
+  background-position: center 60% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none !important;
+}
+
+/* 3) Canvasも全面フィット（念のため） */
+#map-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+/* --- 上の空白を消す：Flexを無効化してMAPを全面に --- */
+#game-container{
+  display: block !important;          /* flexをやめる */
+  align-items: initial !important;
+  justify-content: initial !important;
+}
+
+/* MAPは全面 100% に広げる（下はテキストがオーバーレイで被る想定） */
+#map-area{
+  height: 100% !important;            /* 72% → 100% に */
+}
+
+/* 背景画像の中央寄せズレも完全無効化（既に入れてる場合はそのままでOK） */
+#map-area > #map-bg{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 60% !important; /* 好みで 50〜65% 調整可 */
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+}
+/* === text-box を前面に固定（選択肢/ホットスポットより上、overlayより下）=== */
+#text-box{
+  position: absolute !important;
+  left: 0; right: 0; bottom: 0;
+  z-index: 96000 !important;  /* hotspot(90000) < text(96000) < choices(97000) < overlay(100000) */
+}
+
