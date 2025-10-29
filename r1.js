@@ -5,8 +5,8 @@
 window.STORY_R1 = {
   meta: { areaName: "箏の部屋" },
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"みや.normal.png", smile:"みや.smile.png", kind:"みや.kind.png", fear:"みや.fear.png", confuse:"みや.confuse.png"}},
-    みや_bad:{ defaultSize:"360px", faces:{ normal:"みや.狂.png", angry:"みや.angry.狂.png", tear:"みや.tear.狂.png", smile:"みや.smile.狂.png"} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png"}},
+    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png"} }
  },
 
   // 章固有の情報（情報タブで表示）
@@ -717,4 +717,5 @@ window.STORY_R1 = {
         { flags: ["r1_add_spot"], next: "r1_inspect" },
         { flags: [], next: "r1_hub" }],next: "r1_hub" },
     ]
+
 };
