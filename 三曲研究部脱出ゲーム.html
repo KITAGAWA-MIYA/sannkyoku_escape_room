@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>軽量脱出ゲーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="map-area">
+      <img id="map-bg" src="WhiteRoom.png" alt="map background">
+      <canvas id="map-canvas"></canvas>
+
+      <!-- 旧スロット（使わなくてもOK。window.js側で隠します） -->
+      <img id="hotspot" src="kirakira.png" alt="kirakira" hidden>
+      <img id="hotspot2" src="tannsakuzumi.png" alt="tannsakuzumi" hidden>
+      <img id="みや_hotspot" src="みや.stand.png" alt="full" hidden>
+
+      <!-- 複数スポット用レイヤー -->
+      <div id="hotspot-layer"></div>
+
+      <!-- 立ち絵/一枚絵オーバーレイ -->
+      <img id="overlay" hidden>
+    </div>
+
+    <!-- テキストボックス -->
+    <div id="text-box">
+      <div id="text-speaker">あなた</div>
+      <span id="type-text"></span>
+      <div class="text-hint">
+        Enter / クリックで次へ ▶
+        <span id="auto-badge" hidden>AUTO</span>
+      </div>
+    </div>
+
+    <!-- 選択肢 -->
+    <div id="choices" class="choices"></div>
+    
+    <!-- メニューボタン -->
+    <button id="menu-btn" title="メニュー">&#9776;</button>
+
+    <!-- メニュー -->
+    <div id="menu-modal-bg" hidden>
+      <div id="menu-modal">
+        <header class="menu-header">
+          <h2>メニュー</h2>
+          <button id="menu-close">×</button>
+        </header>
+
+        <nav class="menu-tabs">
+          <button class="tab is-active" data-tab="status">ステータス</button>
+          <button class="tab" data-tab="info">情報</button>
+          <button class="tab" data-tab="save">セーブ</button>
+          <button class="tab" data-tab="settings">設定</button>
+        </nav>
+
+        <section class="menu-panels">
+          <!-- ステータス -->
+          <div class="panel is-active" data-panel="status">
+            <div class="status-grid">
+              <div><span class="label">名前</span><span class="value">サラ</span></div>
+              <div><span class="label">体力</span><span class="value">100 / 100</span></div>
+              <div><span class="label">精神</span><span class="value">80 / 100</span></div>
+            </div>
+          </div>
+
+          <!-- 情報（所持品と統合） -->
+          <div class="panel" data-panel="info">
+            <div id="info-area-tabs" class="info-area-tabs"></div>
+            <div class="info-wrap">
+              <div id="menu-info-list" class="info-list"></div>
+              <div id="menu-info-detail" class="info-detail">
+                <p>情報を選ぶと詳細が表示されます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- セーブ -->
+<div class="panel" data-panel="save">
+  <div style="display:grid;gap:10px">
+    <div>
+      <button id="save-slot1">スロット1にセーブ</button>
+      <button id="load-slot1">ロード</button>
+      <button id="del-slot1">削除</button>
+    </div>
+    <div>
+      <button id="save-slot2">スロット2にセーブ</button>
+      <button id="load-slot2">ロード</button>
+      <button id="del-slot2">削除</button>
+    </div>
+    <div>
+      <button id="save-slot3">スロット3にセーブ</button>
+      <button id="load-slot3">ロード</button>
+      <button id="del-slot3">削除</button>
+    </div>
+    <hr>
+    <div>
+      <button id="export-save">セーブを書き出し(JSON)</button>
+      <input id="import-file" type="file" accept="application/json" style="display:none">
+      <button id="import-save">JSONから読み込み</button>
+    </div>
+    <p id="save-status" style="opacity:.8"></p>
+  </div>
+</div>
+
+
+          <!-- 設定 -->
+          <div class="panel" data-panel="settings">
+            <div class="settings-grid">
+              <label class="row">
+                <span>テキスト速度</span>
+                <input type="range" id="opt-text-speed" min="1" max="5" value="3">
+              </label>
+              <label class="row">
+                <span>オート送り</span>
+                <input type="checkbox" id="opt-auto">
+              </label>
+              <label class="row">
+                <span>BGM</span>
+                <input type="checkbox" id="opt-bgm" checked>
+              </label>
+              <label class="row">
+                <span>効果音</span>
+                <input type="checkbox" id="opt-se" checked>
+              </label>
+              <label class="row">
+                <span>画面の明るさ</span>
+                <input type="range" id="opt-bright" min="0.6" max="1" step="0.05" value="1">
+              </label>
+            </div>
+            <div class="settings-actions">
+              <button id="settings-apply">適用</button>
+              <button id="settings-reset">リセット</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ストーリー（必ず先） -->
+   <script src="script.js"></script>
+  <!-- ロジック -->
+   <script src="window.js"></script>
+
+</body>
+</html>

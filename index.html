@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>三曲研究部脱出ゲーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0e16 0%, #1a1f2e 50%, #0d1420 100%);
+      font-family: 'Meiryo', 'Segoe UI', '游ゴシック', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 背景のパーティクル効果 */
+    .particles {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(141, 211, 255, 0.6);
+      border-radius: 50%;
+      animation: float linear infinite;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* メインコンテナ */
+    .title-container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 40px;
+      max-width: 800px;
+      width: 90%;
+    }
+
+    /* タイトルロゴ */
+    .title-logo {
+      margin-bottom: 60px;
+      animation: titleFadeIn 1.5s ease-out;
+    }
+    
+    .title-main {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 
+        0 0 20px rgba(78, 124, 199, 0.8),
+        0 0 40px rgba(78, 124, 199, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    
+    .title-sub {
+      font-size: clamp(14px, 2.5vw, 20px);
+      color: #8dd3ff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.2em;
+    }
+
+    @keyframes titleFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* メニューボタン */
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: menuFadeIn 1.5s ease-out 0.5s both;
+    }
+    
+    @keyframes menuFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .menu-btn {
+      background: linear-gradient(135deg, rgba(53, 93, 155, 0.8) 0%, rgba(31, 73, 140, 0.8) 100%);
+      border: 2px solid rgba(78, 124, 199, 0.6);
+      color: #fff;
+      font-size: clamp(16px, 3vw, 22px);
+      padding: 18px 40px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .menu-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .menu-btn:hover::before {
+      left: 100%;
+    }
+    
+    .menu-btn:hover {
+      background: linear-gradient(135deg, rgba(78, 124, 199, 0.9) 0%, rgba(53, 93, 155, 0.9) 100%);
+      border-color: rgba(141, 211, 255, 0.8);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 6px 20px rgba(78, 124, 199, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    
+    .menu-btn:active {
+      transform: translateY(0);
+      box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-btn.secondary {
+      background: linear-gradient(135deg, rgba(42, 51, 71, 0.7) 0%, rgba(31, 39, 54, 0.7) 100%);
+      border-color: rgba(78, 124, 199, 0.4);
+      font-size: clamp(14px, 2.5vw, 18px);
+      padding: 14px 32px;
+    }
+    
+    .menu-btn.secondary:hover {
+      background: linear-gradient(135deg, rgba(53, 93, 155, 0.7) 0%, rgba(42, 51, 71, 0.7) 100%);
+      border-color: rgba(78, 124, 199, 0.6);
+    }
+
+    /* フッター情報 */
+    .footer-info {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(141, 211, 255, 0.5);
+      font-size: 12px;
+      text-align: center;
+      animation: footerFadeIn 2s ease-out 1s both;
+    }
+    
+    @keyframes footerFadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* 装飾的なグロー効果 */
+    .glow-orb {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    .glow-orb.blue {
+      background: #4e7cc7;
+      top: -100px;
+      right: -100px;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+    
+    .glow-orb.purple {
+      background: #7c4ec7;
+      bottom: -100px;
+      left: -100px;
+      animation: orbFloat 10s ease-in-out infinite reverse;
+    }
+    
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 30px) scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- 背景パーティクル -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- グロー効果 -->
+  <div class="glow-orb blue"></div>
+  <div class="glow-orb purple"></div>
+  
+  <!-- メインコンテンツ -->
+  <div class="title-container">
+    <div class="title-logo">
+      <h1 class="title-main">三曲研究部脱出ゲーム</h1>
+      <p class="title-sub">ESCAPE ROOM</p>
+    </div>
+    
+    <div class="menu-buttons">
+      <button class="menu-btn" onclick="startGame()">ゲームスタート</button>
+      <button class="menu-btn secondary" onclick="showContinue()">コンティニュー</button>
+      <button class="menu-btn secondary" onclick="showSettings()">設定</button>
+    </div>
+  </div>
+  
+  <div class="footer-info">
+    © 2024 三曲研究部脱出ゲーム<br>
+    推奨環境: Chrome, Firefox, Edge (最新版)
+  </div>
+
+  <script>
+    // パーティクル生成
+    function createParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(particle);
+      }
+    }
+    
+    createParticles();
+    
+    // ボタンアクション
+    function startGame() {
+      // フェードアウト効果
+      document.body.style.transition = 'opacity 0.8s';
+      document.body.style.opacity = '0';
+      
+      setTimeout(() => {
+        // 実際のゲームHTMLに遷移
+        window.location.href = '三曲研究部脱出ゲーム.html';
+      }, 800);
+    }
+    
+    function showContinue() {
+      alert('セーブデータの読み込み機能は準備中です。\n\n※現在は自動セーブに対応していません。');
+    }
+    
+    function showSettings() {
+      alert('設定画面は準備中です。\n\nゲーム内のメニューから音量や画面設定を変更できます。');
+    }
+    
+    // キーボード操作対応
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        startGame();
+      }
+    });
+  </script>
+</body>
+</html>
