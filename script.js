@@ -207,7 +207,7 @@ window.STORY = {
         ]
        }
     ],
-    talk: { sprite:"./みや.stand.png", x:"30%", y:"72%", size:"270px", next:"intro_talk1" },
+    talk: { sprite:"./miya.stand.png", x:"30%", y:"72%", size:"270px", next:"intro_talk1" },
    
     requireFlags: ["paper_backtext", "circle_info", "intro_wall_miya"],
     completeNext: "intro_move"
@@ -649,4 +649,5 @@ window.STORY = {
     { id: "sannnoma_6", name: " ", text: "鍵の開いた扉をゆっくりと開ける――", next: "sannnoma_7" },
     { id: "sannnoma_7", name: " ", text: "", se:"door_open", next: "r3_from_intro" },
   ]
+
 };
