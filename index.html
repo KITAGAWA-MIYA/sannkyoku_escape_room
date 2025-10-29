@@ -224,6 +224,62 @@
       0%, 100% { transform: translate(0, 0) scale(1); }
       50% { transform: translate(30px, 30px) scale(1.1); }
     }
+    /* ===== スマホ横画面 Chrome 向け・見切れ防止の最終上書き ===== */
+@media (orientation: landscape) {
+  /* 動的ツールバーに合わせて実画面サイズでフィット */
+  html, body {
+    width: 100dvw !important;
+    height: 100dvh !important;
+    overflow: hidden; /* 画面外に出さない */
+  }
+
+  /* 背景の装飾は横で邪魔になりやすいので弱める/隠す */
+  .glow-orb { opacity: .08 !important; filter: blur(100px) !important; }
+  /* もっと攻めるなら↓を有効化（完全に非表示） */
+  /* .glow-orb { display: none !important; } */
+
+  /* メインブロック：横でも確実に収まるよう幅/高さと余白を調整 */
+  .title-container {
+    width: min(96dvw, 1000px) !important;
+    max-width: 100% !important;
+    padding: clamp(16px, 3dvh, 32px) !important;
+    margin: 0 auto !important;
+
+    /* 高さを画面内に制限して、中身が多い時は内部スクロール */
+    max-height: calc(
+      100dvh - max(10px, env(safe-area-inset-top)) - max(10px, env(safe-area-inset-bottom))
+    ) !important;
+    overflow: auto !important;
+  }
+
+  /* タイトル文字サイズを横で最適化（大きすぎて切れないように） */
+  .title-main { font-size: clamp(28px, 5dvw, 44px) !important; }
+  .title-sub  { font-size: clamp(12px, 1.8dvw, 18px) !important; }
+
+  /* ボタン類：横で幅を取りすぎないよう調整（内部折返し防止） */
+  .menu-buttons { gap: clamp(12px, 2dvh, 16px) !important; }
+  .menu-btn {
+    font-size: clamp(14px, 2.2dvw, 18px) !important;
+    padding: 14px 28px !important;
+    white-space: nowrap;       /* 1行で収める */
+    max-width: 100%;           /* 親幅を超えない */
+  }
+
+  /* フッターを安全域の中に寄せる（ホームバーに重ならない） */
+  .footer-info {
+    bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90dvw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   /* 長い時は「…」で切る */
+  }
+
+  /* 背景パーティクルは常に画面内に固定（はみ出し防止） */
+  .particles { position: fixed !important; inset: 0 !important; }
+}
+
   </style>
 </head>
 <body>
