@@ -130,72 +130,72 @@ window.STORY_R3 = {
       ui: { silent: true },set:{bgm:"tannsaku"},
       explore: {
         spots: [
-          { id: "r3_look_shakuhachi", x: "50%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r3_shakuhachi", nextRepeat: "r3_shakuhachi_again" },
-          { id: "r3_inugoya", x: "83%", y: "40%", size: "48px", icon: "./kirakira.png", next: "r3_look_inugoya", nextRepeat: "r3_look_inugoya_again" },
-          { id: "r3_botann", x: "46%", y: "74%", size: "48px", icon: "./kirakira.png", next: "r3_look_botann", nextRepeat: "r3_look_botann_again" },
-          { id: "r3_sukoppu", x: "7%", y: "50%", size: "48px", icon: "./kirakira.png", next: "r3_look_sukoppu", nextRepeat: "r3_look_sukoppu_again" },
+          { id: "r3_look_shakuhachi", x: "45%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r3_shakuhachi", nextRepeat: "r3_shakuhachi_again" },
+          { id: "r3_inugoya", x: "83%", y: "43%", size: "48px", icon: "./kirakira.png", next: "r3_look_inugoya", nextRepeat: "r3_look_inugoya_again" },
+          { id: "r3_botann", x: "42%", y: "74%", size: "48px", icon: "./kirakira.png", next: "r3_look_botann", nextRepeat: "r3_look_botann_again" },
+          { id: "r3_sukoppu", x: "3%", y: "55%", size: "48px", icon: "./kirakira.png", next: "r3_look_sukoppu", nextRepeat: "r3_look_sukoppu_again" },
           
-          { id: "r3_ana_dai", x: "10%", y: "18%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+          { id: "r3_ana_dai", x: "7%", y: "25%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_cover_dai"], next: "r3_covering_dai" },
         { flags: [], next: "r3_look_ana_dai" }], next: "r3_look_ana_dai", nextRepeat: "r3_look_ana_dai_again", nextRepeatIfFlags:[
         {flags:["r3_cover_dai"], next:"r3_covering_dai"},
         {flags:[], next:"r3_look_ana_dai_again"}]},
         
-        { id: "r3_ana_shou1", x: "81%", y: "5%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+        { id: "r3_ana_shou1", x: "75%", y: "12%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_cover_shou1"], next: "r3_covering_shou1" },
         { flags: [], next: "r3_look_ana_shou1" }], next: "r3_look_ana_shou1", nextRepeat: "r3_look_ana_shou1_again", nextRepeatIfFlags:[
         {flags:["r3_cover_shou1"], next:"r3_covering_shou1"},
         {flags:[], next:"r3_look_ana_shou1_again"}]},
         
-        { id: "r3_ana_shou2", x: "86%", y: "15%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+        { id: "r3_ana_shou2", x: "80%", y: "30%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_cover_shou2"], next: "r3_covering_shou2" },
         { flags: [], next: "r3_look_ana_shou2" }], next: "r3_look_ana_shou2", nextRepeat: "r3_look_ana_shou2_again", nextRepeatIfFlags:[
         {flags:["r3_cover_shou2"], next:"r3_covering_shou2"},
         {flags:[], next:"r3_look_ana_shou2_again"}]},
         
-        { id: "r3_ana_shou3", x: "90%", y: "5%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+        { id: "r3_ana_shou3", x: "87%", y: "10%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_cover_shou3"], next: "r3_covering_shou3" },
         { flags: [], next: "r3_look_ana_shou3" }], next: "r3_look_ana_shou3", nextRepeat: "r3_look_ana_shou3_again", nextRepeatIfFlags:[
         {flags:["r3_cover_shou3"], next:"r3_covering_shou3"},
         {flags:[], next:"r3_look_ana_shou3_again"}]},
         
-        { id: "r3_ana_shou4", x: "93%", y: "13%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+        { id: "r3_ana_shou4", x: "95%", y: "18%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_cover_shou4"], next: "r3_covering_shou4" },
         { flags: [], next: "r3_look_ana_shou4" }], next: "r3_look_ana_shou4", nextRepeat: "r3_look_ana_shou4_again", nextRepeatIfFlags:[
         {flags:["r3_cover_shou4"], next:"r3_covering_shou4"},
         {flags:[], next:"r3_look_ana_shou4_again"}]},
 
-          { id: "r3_tsutsu", x: "51%", y: "80%", size: "48px", icon: "./kirakira.png", next: "r3_look_tsutsu", nextRepeat: "r3_look_tsutsu_again" },
-          { id: "r3_light", x: "50%", y: "5%", size: "48px", icon: "./kirakira.png", next: "r3_look_light", nextRepeat: "r3_look_light_again" },
-          { id: "r3_batsu_1", x: "8%", y: "82%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+          { id: "r3_tsutsu", x: "47%", y: "81%", size: "48px", icon: "./kirakira.png", next: "r3_look_tsutsu", nextRepeat: "r3_look_tsutsu_again" },
+          { id: "r3_light", x: "49%", y: "5%", size: "48px", icon: "./kirakira.png", next: "r3_look_light", nextRepeat: "r3_look_light_again" },
+          { id: "r3_batsu_1", x: "4%", y: "85%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_ita_dai"], next: "r3_look_batsu1_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu1" },
-          { id: "r3_batsu_2", x: "22%", y: "73%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_2", x: "18%", y: "76%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_voice_recording"], next: "r3_look_batsu2_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu2" },
-          { id: "r3_batsu_3", x: "33%", y: "69%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_3", x: "30%", y: "74%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_ita_shou1"], next: "r3_look_batsu3_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu3" },
-          { id: "r3_batsu_4", x: "24%", y: "85%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_4", x: "21%", y: "85%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_chiisanashizuku_san"], next: "r3_look_batsu4_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu4" },
-          { id: "r3_batsu_5", x: "68%", y: "75%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_5", x: "64%", y: "75%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_ita_shou2"], next: "r3_look_batsu5_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu5" },
-          { id: "r3_batsu_6", x: "95%", y: "80%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+          { id: "r3_batsu_6", x: "98%", y: "83%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_memo_sannjusou"], next: "r3_look_batsu6_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu6" },
-          { id: "r3_batsu_7", x: "81%", y: "82%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
+          { id: "r3_batsu_7", x: "78%", y: "85%", size: "48px", icon: "./kirakira.png", nextIfFlags: [
         { flags: ["r3_ita_shou3"], next: "r3_look_batsu7_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu7" },
-          { id: "r3_batsu_8", x: "68%", y: "91%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_8", x: "68%", y: "93%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_nazo_tsuduki"], next: "r3_look_batsu8_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu8" },
-          { id: "r3_batsu_9", x: "89%", y: "88%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
+          { id: "r3_batsu_9", x: "85%", y: "89%", size: "48px", icon: "./kirakira.png",nextIfFlags: [
         { flags: ["r3_ita_shou4"], next: "r3_look_batsu9_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu9" },
         ],
-        talk: { sprite: "./miya.stand.png", x: "58%", y: "72%", size: "501px", next: "r3_talk1" }
+        talk: { sprite: "./miya.stand.png", x: "58%", y: "75%", size: "501px", next: "r3_talk1" }
       }
     },
 
@@ -704,6 +704,7 @@ window.STORY_R3 = {
         { label: "白い部屋に戻る", nextIfFlags: [
         { flags: ["BLUE"], next: "r3_to_final" },
         { flags: [], next: "r3_shiro" }], next: "r3_shiro" },
+        { label: "探索に戻る", next: "r3_hub" },
       ],
     },
 

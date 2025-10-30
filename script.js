@@ -186,7 +186,7 @@ window.STORY = {
     { id: "intro_loop41", name: "あなた", text: "(けど、どちらにしても、目の前にいる”みや”は明らかに無理してそうだ。)",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_loop42" },
     { id: "intro_loop42", name: "あなた", text: "(何か言うべきなのかもしれないけれど、彼女を傷つけてしまいかねない。)",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_loop43" },
     { id: "intro_loop43", name: "あなた", text:"(今は、そっとしておこう。)", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop44" },
-    { id: "intro_loop44", name: "あなた", text: "何か思い出す手がかりもあるかもしれないし、この部屋のことを調べてみましょう。", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop45" },
+    { id: "intro_loop44", name: "みや", text: "何か思い出す手がかりもあるかもしれないし、この部屋のことを調べてみましょう。", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop45" },
     { id: "intro_loop45", name: "みや", text: "はい!よろしくお願いします!", portrait:{ who:"みや", face:"kind", size:"500px" },next: "intro_hub" },
 
     // 探索ハブ(紙/見回す/話す/所持品)
@@ -470,11 +470,11 @@ window.STORY = {
       ui: { silent: true },
       explore: {
       spots: [
-        { id:"Door_ichi", x:"15%", y:"20%", size:"48px", icon:"./kirakira.png",next:"door_ichi"},
-        { id:"Door_ni", x:"40%", y:"12%", size:"48px",  icon:"./kirakira.png",next:"door_ni"},
-        { id:"Door_san",   x:"83%", y:"30%", size:"48px",  icon:"./kirakira.png", next:"door_san"}
+        { id:"Door_ichi", x:"9%", y:"15%", size:"48px", icon:"./kirakira.png",next:"door_ichi"},
+        { id:"Door_ni", x:"38%", y:"12%", size:"48px",  icon:"./kirakira.png",next:"door_ni"},
+        { id:"Door_san",   x:"88%", y:"30%", size:"48px",  icon:"./kirakira.png", next:"door_san"}
          ],
-       talk: { sprite:"./miya.stand.png", x:"30%", y:"72%", size:"501px", next:"intro_talk1" },
+       talk: { sprite:"./miya.stand.png", x:"24%", y:"75%", size:"501px", next:"intro_talk1" },
      },
     },
 
@@ -649,5 +649,4 @@ window.STORY = {
     { id: "sannnoma_6", name: " ", text: "鍵の開いた扉をゆっくりと開ける――", next: "sannnoma_7" },
     { id: "sannnoma_7", name: " ", text: "", se:"door_open", next: "r3_from_intro" },
   ]
-
 };

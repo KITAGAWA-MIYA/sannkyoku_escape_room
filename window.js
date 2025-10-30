@@ -1071,13 +1071,13 @@ if (!choicesLayer && mapArea) {
   choicesLayer.id = "choices-layer";
   Object.assign(choicesLayer.style, {
     position: "absolute",
-    left: "75%",
-    top: "20%",                 // 画面内の出し位置（好みで）
+    left: "50%",
+    bottom: "10%",                 // 画面内の出し位置（好みで）
     transform: "translate(-50%)",    // ← 横・縦とも中央基準に,
     width: "90%",
     display: "none",
     gridTemplateColumns: "1fr",
-    gap: "3px",
+    gap: "8px",
     zIndex: "97000",
     pointerEvents: "auto",
   });

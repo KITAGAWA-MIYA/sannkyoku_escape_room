@@ -127,13 +127,13 @@ window.STORY_R1 = {
       explore: {
         spots: [
           { id: "r1_uekibachi", x: "95%", y: "54%", size: "48px", icon: "./kirakira.png", next: "r1_ki", nextRepeat: "r1_ki_again" },
-          { id: "r1_shuuji", x: "56%", y: "85%", size: "48px", icon: "./kirakira.png", next: "r1_fude" },
-          { id: "r1_honn", x: "33%", y: "70%", size: "48px", icon: "./kirakira.png", next: "r1_book_glasses", nextRepeat: "r1_book_glasses_again" },
-          { id: "r1_Kakejiku", x: "51%", y: "10%", size: "48px", icon: "./kirakira.png", next: "r1_kakejiku" },
-          { id: "r1_ka_tenn", x: "38%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_white_hirahira", nextRepeat: "r1_white_hirahira_again" },
-          { id: "r1_anndonn", x: "45%", y: "37%", size: "48px", icon: "./kirakira.png", next: "r1_light", nextRepeat: "r1_light_again" },
-          { id: "r1_book_boxes", x: "25%", y: "45%", size: "48px", icon: "./kirakira.png", next: "r1_honndana", nextRepeat: "r1_honndana_again" },
-          { id: "r1_kazari", x: "21%", y: "17%", size: "48px", icon: "./kirakira.png", next: "r1_hachi_binn_kami", nextRepeat: "r1_hachi_binn_kami_again" },
+          { id: "r1_shuuji", x: "53%", y: "83%", size: "48px", icon: "./kirakira.png", next: "r1_fude" },
+          { id: "r1_honn", x: "28%", y: "70%", size: "48px", icon: "./kirakira.png", next: "r1_book_glasses", nextRepeat: "r1_book_glasses_again" },
+          { id: "r1_Kakejiku", x: "47%", y: "10%", size: "48px", icon: "./kirakira.png", next: "r1_kakejiku" },
+          { id: "r1_ka_tenn", x: "32%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_white_hirahira", nextRepeat: "r1_white_hirahira_again" },
+          { id: "r1_anndonn", x: "40%", y: "37%", size: "48px", icon: "./kirakira.png", next: "r1_light", nextRepeat: "r1_light_again" },
+          { id: "r1_book_boxes", x: "20%", y: "45%", size: "48px", icon: "./kirakira.png", next: "r1_honndana", nextRepeat: "r1_honndana_again" },
+          { id: "r1_kazari", x: "16%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_hachi_binn_kami", nextRepeat: "r1_hachi_binn_kami_again" },
           { id: "kuro_urushi", x: "55%", y: "57%", size: "48px", icon: "./kirakira.png", next: "r1_13genn" }
         ],
         talk: { sprite: "./miya.stand.png", x: "10%", y: "72%", size: "501px", next: "r1_talk1" }
@@ -211,7 +211,8 @@ window.STORY_R1 = {
           nextIfFlags: [
             { flags: ["ring_big", "ring_middle", "ring_small", "koto_manual"], next: "r1_play_koto" },
             { flags: [], next: "r1_try_koto" }], 
-          next: "r1_try_koto", }
+          next: "r1_try_koto", },
+          { label: "探索に戻る", next: "r1_inspect" },
       ]
     },
 
@@ -717,5 +718,4 @@ window.STORY_R1 = {
         { flags: ["r1_add_spot"], next: "r1_inspect" },
         { flags: [], next: "r1_hub" }],next: "r1_hub" },
     ]
-
 };
