@@ -357,7 +357,7 @@ window.STORY_R1 = {
     { id: "r1_あなた_koto26", name: " ", text: "どんな音楽を奏でてるか、それがいい演奏なのかもよく分からない。", next: "r1_あなた_koto27" },
     { id: "r1_あなた_koto27", name: " ", text: "自分はただ、箏を弾くことに没頭していた。", next: "r1_あなた_koto28" },
     { id: "r1_あなた_koto28", name: " ", text: "――", set: { bg: "#000" }, next: "r1_あなた_koto29" },
-    { id: "r1_あなた_koto29", name: " ", text: "――",  set: { bg: "ichinoma.png" },next: "r1_あなた_koto30" },
+    { id: "r1_あなた_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.png" },next: "r1_あなた_koto30" },
     { id: "r1_あなた_koto30", name: "あなた", text: "(次に演奏するべき音が分からない…)", next: "r1_あなた_koto31" },
     { id: "r1_あなた_koto31", name: "あなた", text: "(これで終わり…なのか?)", next: "r1_あなた_koto32" },
     { id: "r1_あなた_koto32", name: " ", text: "",se:"clap", next: "r1_あなた_koto33" },
@@ -403,7 +403,7 @@ window.STORY_R1 = {
     { id: "r1_みや_koto27", name: " ", text: "彼女は一心不乱に箏を見つめ、音を奏でている。", next: "r1_みや_koto28" },
     { id: "r1_みや_koto28", name: " ", text: "自分はただただ、その演奏に圧倒されていた。", next: "r1_みや_koto29" },
     { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "#FFF" }, next: "r1_みや_koto30" },
-    { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "ichinoma.png" }, next: "r1_みや_koto30" },
+    { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.png" }, next: "r1_みや_koto30" },
     { id: "r1_みや_koto30", name: " ", text: "(…演奏が止まった?)", next: "r1_みや_koto31" },
     { id: "r1_みや_koto31", name: " ", text: "……", portrait:{ who:"みや", face:"confuse", size:"500px" },next: "r1_みや_koto32" },
     { id: "r1_みや_koto32", name: " ", text: "えっと……",portrait:{ who:"みや", face:"confuse", size:"500px" }, next: "r1_みや_koto33" },
@@ -717,4 +717,5 @@ window.STORY_R1 = {
         { flags: ["r1_add_spot"], next: "r1_inspect" },
         { flags: [], next: "r1_hub" }],next: "r1_hub" },
     ]
+
 };
