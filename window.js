@@ -663,7 +663,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.objectFit = "contain";
       img.style.cursor = "pointer";
       img.style.imageRendering = "pixelated";
-      img.style.zIndex = sp.z || 95;
+      img.style.zIndex = sp.z || 97;
       if (done) img.style.opacity = ".78";
 
       img.style.pointerEvents = "auto";
