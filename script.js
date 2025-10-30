@@ -186,7 +186,7 @@ window.STORY = {
     { id: "intro_loop41", name: "あなた", text: "(けど、どちらにしても、目の前にいる”みや”は明らかに無理してそうだ。)",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_loop42" },
     { id: "intro_loop42", name: "あなた", text: "(何か言うべきなのかもしれないけれど、彼女を傷つけてしまいかねない。)",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_loop43" },
     { id: "intro_loop43", name: "あなた", text:"(今は、そっとしておこう。)", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop44" },
-    { id: "intro_loop44", name: "みや", text: "何か思い出す手がかりもあるかもしれないし、この部屋のことを調べてみましょう。", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop45" },
+    { id: "intro_loop44", name: "あなた", text: "何か思い出す手がかりもあるかもしれないし、この部屋のことを調べてみましょう。", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_loop45" },
     { id: "intro_loop45", name: "みや", text: "はい!よろしくお願いします!", portrait:{ who:"みや", face:"kind", size:"500px" },next: "intro_hub" },
 
     // 探索ハブ(紙/見回す/話す/所持品)
@@ -649,4 +649,5 @@ window.STORY = {
     { id: "sannnoma_6", name: " ", text: "鍵の開いた扉をゆっくりと開ける――", next: "sannnoma_7" },
     { id: "sannnoma_7", name: " ", text: "", se:"door_open", next: "r3_from_intro" },
   ]
+
 };
