@@ -45,7 +45,7 @@ window.STORY = {
 
   nodes: [
     // 起きる
-    { id: "intro_wake", name: " ", text: "目を開けると、世界は白で満ちていた。", set:{bgm:"white_room"}, next: "intro_あなた1" },
+    { id: "intro_wake", name: " ", text: "目を開けると、世界は白で満ちていた。", set:{bg: "./WhiteRoom.jpeg"}, next: "intro_あなた1" },
     { id: "intro_あなた1", name: "あなた",    text: "ここは一体…", next: "intro_sys1" },
     { id: "intro_sys1", name: " ", text: "視界は白一色。他の色も音も聞こえない。", next: "intro_sys2" },
     { id: "intro_sys2", name: " ", text: "まるで一人取り残されたみたいに――", next: "intro_あなた2" },
