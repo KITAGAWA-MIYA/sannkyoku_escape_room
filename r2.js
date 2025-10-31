@@ -2,8 +2,8 @@
 window.STORY_R2 = {
   meta: { areaName: "三味線の部屋" },
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpg", smile:"miya.smile.jpg", kind:"miya.kind.jpg", fear:"miya.fear.jpg", confuse:"miya.confuse.jpg",ormal:"./kirara.normal.jpg",mile:"./kirara_smile.jpg",ind:"./kirara_kind.jpg"}},
-    みや_bad:{ defaultSize:"500px",defaultX:"50%", defaultY:"43%",  faces:{ normal:"miya.狂.jpg", angry:"miya.angry.狂.jpg", tear:"miya.tear.狂.jpg", smile:"miya.smile.狂.jpg",} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpeg", smile:"miya.smile.jpeg", kind:"miya.kind.jpeg", fear:"miya.fear.jpeg", confuse:"miya.confuse.jpeg",ormal:"./kirara.normal.jpeg",mile:"./kirara_smile.jpeg",ind:"./kirara_kind.jpeg"}},
+    みや_bad:{ defaultSize:"500px",defaultX:"50%", defaultY:"43%",  faces:{ normal:"miya.狂.jpeg", angry:"miya.angry.狂.jpeg", tear:"miya.tear.狂.jpeg", smile:"miya.smile.狂.jpeg",} }
  },
   info: {
     hekiga: { 
@@ -133,7 +133,7 @@ window.STORY_R2 = {
           { id:"r2_look_kagi", x:"95%", y:"40%", size:"48px", icon:"./kirakira.png", next:"r2_kagi", nextRepeat:"r2_kagi_again" },
           { id:"r2_look_daliy", x:"2%", y:"50%", size:"48px", icon:"./kirakira.png", next:"r2_nikki", nextRepeat:"r2_nikki_again" },
         ],
-        talk: { sprite:"./miya.stand.jpg", x:"23%", y:"75%", size:"501px", next:"r2_talk_みや1" },
+        talk: { sprite:"./miya.stand.jpeg", x:"23%", y:"75%", size:"501px", next:"r2_talk_みや1" },
       }
     },
 
@@ -576,16 +576,16 @@ window.STORY_R2 = {
     { id: "r2_chase_みや", name: "???", text: "ふーん、逃げちゃうんだ。", next: "r2_candle_all_off25" },
 
     { id: "r2_candle_all_off25",set:{bgm:"kirarasan"} , name: "あなた", text: "…!!…だ、誰!?", next: "r2_candle_all_off26" },
-    { id: "r2_candle_all_off26", name: "???", text: "ふふっ…突然話しかけてごめんなさい。",overlay: { sprite: "./miya.mile.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off27" },
-    { id: "r2_candle_all_off27", name: "???", text: "こんにちは。はじめまして。",overlay: { sprite: "./miya.ormal.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off28" },
-    { id: "r2_candle_all_off28", name: "???", text: "あ、でも、ポスターを見てくれたなら、君は私をみたことあるかも。",overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off29" },
-    { id: "r2_candle_all_off29", name: "あなた", text: "君はーー。",overlay: { sprite: "./miya.ind.png", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" },next: "r2_candle_all_off30" },
-    { id: "r2_candle_all_off30", name: "???", text: "私は、君の味方でも敵でもないの。だから、君のことを助けないし、殺しもしない。", overlay: { sprite: "./miya.ormal.png", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" }, next: "r2_candle_all_off31" },
-    { id: "r2_candle_all_off31", name: "???", text: "けれど、君に夢を与えることは出来るんだよ。", overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off32" },
-    { id: "r2_candle_all_off32", name: "あなた", text: "(夢…?)",overlay: { sprite: "./miya.ind.png", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" }, next: "r2_candle_all_off33" },
-    { id: "r2_candle_all_off33", name: "???", text: "…君もその子も、私の大好きなヒト。",overlay: { sprite: "./miya.mile.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off34" },
-    { id: "r2_candle_all_off34", name: "???", text: "ねぇ…もっと…", overlay: { sprite: "./miya.ormal.png", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" },next: "r2_candle_all_off35" },
-    { id: "r2_candle_all_off35", name: "???", text: "私を楽しませて?", overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},next: "r2_candle_all_off36" },
+    { id: "r2_candle_all_off26", name: "???", text: "ふふっ…突然話しかけてごめんなさい。",overlay: { sprite: "./miya.mile.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off27" },
+    { id: "r2_candle_all_off27", name: "???", text: "こんにちは。はじめまして。",overlay: { sprite: "./miya.ormal.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off28" },
+    { id: "r2_candle_all_off28", name: "???", text: "あ、でも、ポスターを見てくれたなら、君は私をみたことあるかも。",overlay: { sprite: "./miya.ind.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off29" },
+    { id: "r2_candle_all_off29", name: "あなた", text: "君はーー。",overlay: { sprite: "./miya.ind.jpeg", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" },next: "r2_candle_all_off30" },
+    { id: "r2_candle_all_off30", name: "???", text: "私は、君の味方でも敵でもないの。だから、君のことを助けないし、殺しもしない。", overlay: { sprite: "./miya.ormal.jpeg", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" }, next: "r2_candle_all_off31" },
+    { id: "r2_candle_all_off31", name: "???", text: "けれど、君に夢を与えることは出来るんだよ。", overlay: { sprite: "./miya.ind.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off32" },
+    { id: "r2_candle_all_off32", name: "あなた", text: "(夢…?)",overlay: { sprite: "./miya.ind.jpeg", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" }, next: "r2_candle_all_off33" },
+    { id: "r2_candle_all_off33", name: "???", text: "…君もその子も、私の大好きなヒト。",overlay: { sprite: "./miya.mile.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off34" },
+    { id: "r2_candle_all_off34", name: "???", text: "ねぇ…もっと…", overlay: { sprite: "./miya.ormal.jpeg", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" },next: "r2_candle_all_off35" },
+    { id: "r2_candle_all_off35", name: "???", text: "私を楽しませて?", overlay: { sprite: "./miya.ind.jpeg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},next: "r2_candle_all_off36" },
     { id: "r2_candle_all_off36",stopBgm:true, name: "あなた", text: "…!!!!", se:"magic",set: { bg: "./ninoma.png" }, next: "r2_candle_all_off37" },
     { id: "r2_candle_all_off37", name: "あなた", text: "今の音…ってあれ?", next: "r2_candle_all_off38" },
     { id: "r2_candle_all_off38", name: "あなた", text: "(蠟燭の明かりが…戻ってる…?)", next: "r2_candle_all_off39" },
