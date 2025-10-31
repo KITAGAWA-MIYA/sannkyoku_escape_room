@@ -452,7 +452,7 @@ const SAVE_KEY_PREFIX = "sankyo_escape_save_";
 function snapshotState() {
   // 取り出し可能な最小セット（拡張OK）
   return {
-    nodeId: window.currentNodeId || window.story?.start || "intro_wake",
+    nodeId: window.state?.currentId || window.story?.start || "intro_wake",
     flags: Array.from(window.state?.flags || []),
     items: Array.from(window.state?.items || []),
     info:  Array.from(window.state?.info  || []),
@@ -632,6 +632,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     clearExploreLayer();
     hideFixedSlots();
+      // === 🟢 探索時の「みや立ち絵」表示設定 ===
+  const showMiya = localStorage.getItem('showMiyaStand') !== 'false';
+  const miyaImg = document.querySelector('img[src*="miya.stand"]');
+  if (miyaImg) {
+    // 完全に非表示にする（クリック判定も消える）
+    miyaImg.style.display = showMiya ? 'block' : 'none';
+  }
+  // === 追加ここまで ===
 
     const spots = node.explore.spots || [];
 
@@ -699,30 +707,34 @@ document.addEventListener("DOMContentLoaded", () => {
       laあなたtSpots();
     });
 
-    if (node.explore.talk) {
-      const t = node.explore.talk;
-      const mi = document.createElement("img");
-      mi.className = "spot";
-      mi.dataset.role = "みや";
-      mi.src = t.sprite || "./06.与田かすみ立ち.png";
-      mi.alt = "みや";
-      mi.style.position = "absolute";
-      mi.style.left = t.x || "50%";
-      mi.style.top = t.y || "72%";
-      mi.style.transform = "translate(-50%,-50%)";
-      if (t.size) { mi.style.height = t.size; mi.style.width = "auto"; }
-      mi.style.objectFit = "contain";
-      mi.style.cursor = "pointer";
-      mi.style.zIndex = t.z || 96;
-      mi.style.pointerEvents = "auto";
-      mi.addEventListener("click", () => {
-        clearExploreLayer();
-        window.state.currentId = t.next;
-        renderNode();
-      });
-      hotspotLayer.appendChild(mi);
-      laあなたtSpots();
-    }
+ if (node.explore.talk) {
+  const showMiya = localStorage.getItem('showMiyaStand') !== 'false';
+  if (showMiya) {
+    const t = node.explore.talk;
+    const mi = document.createElement("img");
+    mi.className = "spot";
+    mi.dataset.role = "みや";
+    mi.src = t.sprite || "./miya.stand.png";
+    mi.alt = "みや";
+    mi.style.position = "absolute";
+    mi.style.left = t.x || "50%";
+    mi.style.top = t.y || "72%";
+    mi.style.transform = "translate(-50%,-50%)";
+    if (t.size) { mi.style.height = t.size; mi.style.width = "auto"; }
+    mi.style.objectFit = "contain";
+    mi.style.cursor = "pointer";
+    mi.style.zIndex = t.z || 96;
+    mi.style.pointerEvents = "auto";
+    mi.addEventListener("click", () => {
+      clearExploreLayer();
+      window.state.currentId = t.next;
+      renderNode();
+    });
+    hotspotLayer.appendChild(mi);
+    laあなたtSpots();
+  }
+}
+
     return hotspotLayer.childElementCount > 0;
   }
 
@@ -1065,15 +1077,16 @@ if (nx) { window.state.currentId = nx; renderNode(); }
       mapArea.appendChild(hotspotLayer);
     }
     // 選択肢レイヤ
+// 選択肢レイヤ
 let choicesLayer = document.querySelector("#choices-layer");
-if (!choicesLayer && mapArea) {
+if (!choicesLayer) {
   choicesLayer = document.createElement("div");
   choicesLayer.id = "choices-layer";
   Object.assign(choicesLayer.style, {
     position: "absolute",
     left: "50%",
-    bottom: "10%",                 // 画面内の出し位置（好みで）
-    transform: "translate(-50%)",    // ← 横・縦とも中央基準に,
+    bottom: "10%",
+    transform: "translate(-50%)",
     width: "90%",
     display: "none",
     gridTemplateColumns: "1fr",
@@ -1081,8 +1094,17 @@ if (!choicesLayer && mapArea) {
     zIndex: "97000",
     pointerEvents: "auto",
   });
-  mapArea.appendChild(choicesLayer);
+
+  // 🟢 親を mapArea ではなく game-container に変更
+  const gameContainer = document.querySelector("#game-container");
+  if (gameContainer) {
+    gameContainer.appendChild(choicesLayer);
+  } else if (mapArea) {
+    // 保険：game-containerがなければ従来通り
+    mapArea.appendChild(choicesLayer);
+  }
 }
+
 
 
     infoList = $("#menu-info-list");
@@ -1219,6 +1241,22 @@ if (!choicesLayer && mapArea) {
 
     // 初回レンダ
     renderNode();
+    // 起動時または設定読込時に反映
+const chkShowMiya = document.getElementById('opt-show-miya');
+if (chkShowMiya) {
+  const saved = localStorage.getItem('showMiyaStand');
+  chkShowMiya.checked = saved !== 'false'; // デフォルトON
+
+  chkShowMiya.addEventListener('change', () => {
+    localStorage.setItem('showMiyaStand', chkShowMiya.checked);
+
+    // 🟢 探索画面中なら即再描画して反映
+    const cur = window.nodesById?.get(window.state?.currentId);
+    if (cur?.explore) window.__VN?.renderNode?.();
+  });
+}
+
+
     // 初回も親領域にフィット
     laあなたtOverlay();
     wireSaveButtons();  // ←セーブボタン結線
