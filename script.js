@@ -6,8 +6,8 @@ window.STORY = {
 
   //キャラ辞書
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpeg", smile:"miya.smile.jpeg", kind:"miya.kind.jpeg", fear:"miya.fear.jpeg", confuse:"miya.confuse.jpeg"}},
-    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.jpeg", angry:"miya.angry.狂.jpeg", tear:"miya.tear.狂.jpeg", smile:"miya.smile.狂.jpeg"} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png"}},
+    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png"} }
  },
   info: {
     paper: {title: "紙",icon: "./paper.png", image: "./paper.png",desc: "白い紙。端が少し折れている。",area:"白い部屋",
@@ -207,7 +207,7 @@ window.STORY = {
         ]
        }
     ],
-    talk: { sprite:"./miya.stand.jpeg", x:"30%", y:"72%", size:"501px", next:"intro_talk1" },
+    talk: { sprite:"./miya.stand.png", x:"30%", y:"72%", size:"501px", next:"intro_talk1" },
    
     requireFlags: ["paper_backtext", "circle_info", "intro_wall_みや"],
     completeNext: "intro_move"
@@ -474,7 +474,7 @@ window.STORY = {
         { id:"Door_ni", x:"38%", y:"12%", size:"48px",  icon:"./kirakira.png",next:"door_ni"},
         { id:"Door_san",   x:"88%", y:"30%", size:"48px",  icon:"./kirakira.png", next:"door_san"}
          ],
-       talk: { sprite:"./miya.stand.jpeg", x:"24%", y:"75%", size:"501px", next:"intro_talk1" },
+       talk: { sprite:"./miya.stand.png", x:"24%", y:"75%", size:"501px", next:"intro_talk1" },
      },
     },
 

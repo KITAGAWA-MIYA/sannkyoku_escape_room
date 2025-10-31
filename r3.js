@@ -5,8 +5,8 @@
 window.STORY_R3 = {
   meta: { areaName: "尺八の部屋" },
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpeg", smile:"miya.smile.jpeg", kind:"miya.kind.jpeg", fear:"miya.fear.jpeg", confuse:"miya.confuse.jpeg"}},
-    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.jpeg", angry:"miya.angry.狂.jpeg", tear:"miya.tear.狂.jpeg", smile:"miya.smile.狂.jpeg"} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png"}},
+    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png"} }
  },
 
   // 章固有の情報(情報タブで表示)
@@ -195,7 +195,7 @@ window.STORY_R3 = {
         { flags: ["r3_ita_shou4"], next: "r3_look_batsu9_again" },
         { flags: [], next: "r3_look_batsu1" }], next: "r3_look_batsu9" },
         ],
-        talk: { sprite: "./miya.stand.jpeg", x: "58%", y: "75%", size: "501px", next: "r3_talk1" }
+        talk: { sprite: "./miya.stand.png", x: "58%", y: "75%", size: "501px", next: "r3_talk1" }
       }
     },
 
