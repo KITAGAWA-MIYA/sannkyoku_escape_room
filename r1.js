@@ -79,7 +79,7 @@ window.STORY_R1 = {
 
   nodes: [
     // ===== 壱ノ間：導入 =====
-    { id: "r1_from_intro", name: " ", text: "扉をくぐると、世界が変わった。", set:{ bg: "Ichinoma.png" },next: "r1_from_intro3" },
+    { id: "r1_from_intro", name: " ", text: "扉をくぐると、世界が変わった。", set:{ bg: "Ichinoma.jpeg" },next: "r1_from_intro3" },
     { id: "r1_from_intro3", name: " ", text: "白い光が柔らかく揺らぎ、木と砂の香りがかすかに混じる。", next: "r1_from_intro4" },
     { id: "r1_from_intro4", name: "あなた", text: "ここは…？", next: "r1_from_intro5" },
     { id: "r1_from_intro5", name: "みや", text: "出口…ではなさそうですね。", portrait:{ who:"みや", face:"fear", size:"500px" },next: "r1_from_intro6" },
@@ -358,7 +358,7 @@ window.STORY_R1 = {
     { id: "r1_あなた_koto26", name: " ", text: "どんな音楽を奏でてるか、それがいい演奏なのかもよく分からない。", next: "r1_あなた_koto27" },
     { id: "r1_あなた_koto27", name: " ", text: "自分はただ、箏を弾くことに没頭していた。", next: "r1_あなた_koto28" },
     { id: "r1_あなた_koto28", name: " ", text: "――", set: { bg: "#000" }, next: "r1_あなた_koto29" },
-    { id: "r1_あなた_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.png" },next: "r1_あなた_koto30" },
+    { id: "r1_あなた_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.jpeg" },next: "r1_あなた_koto30" },
     { id: "r1_あなた_koto30", name: "あなた", text: "(次に演奏するべき音が分からない…)", next: "r1_あなた_koto31" },
     { id: "r1_あなた_koto31", name: "あなた", text: "(これで終わり…なのか?)", next: "r1_あなた_koto32" },
     { id: "r1_あなた_koto32", name: " ", text: "",se:"clap", next: "r1_あなた_koto33" },
@@ -404,7 +404,7 @@ window.STORY_R1 = {
     { id: "r1_みや_koto27", name: " ", text: "彼女は一心不乱に箏を見つめ、音を奏でている。", next: "r1_みや_koto28" },
     { id: "r1_みや_koto28", name: " ", text: "自分はただただ、その演奏に圧倒されていた。", next: "r1_みや_koto29" },
     { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "#FFF" }, next: "r1_みや_koto30" },
-    { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.png" }, next: "r1_みや_koto30" },
+    { id: "r1_みや_koto29", name: " ", text: "――",  set: { bg: "Ichinoma.jpeg" }, next: "r1_みや_koto30" },
     { id: "r1_みや_koto30", name: " ", text: "(…演奏が止まった?)", next: "r1_みや_koto31" },
     { id: "r1_みや_koto31", name: " ", text: "……", portrait:{ who:"みや", face:"confuse", size:"500px" },next: "r1_みや_koto32" },
     { id: "r1_みや_koto32", name: " ", text: "えっと……",portrait:{ who:"みや", face:"confuse", size:"500px" }, next: "r1_みや_koto33" },
@@ -677,13 +677,13 @@ window.STORY_R1 = {
     },
 
     //壱の間⇒白い部屋
-    { id: "r1_shiro", name: "あなた", text: "白い部屋に戻った。",set: { bg: "./Three_Doors.png" }, se:"door_open", nextIfFlags: [
+    { id: "r1_shiro", name: "あなた", text: "白い部屋に戻った。",set: { bg: "./Three_Doors.jpeg" }, se:"door_open", nextIfFlags: [
         { flags: ["Green"],next: "ninoma_kagi" },
         { flags: [], next: "intro_doors" }],next: "intro_doors" },
      //壱の間⇒最後の白い部屋
     { id: "r1_shiro_fin", name: "あなた", text: "白い部屋に戻った。",set: { bg: "./shiroima.png" }, se:"door_open", next: "fin_hub" },
     //白い部屋⇒壱の間
-     { id: "r1_come_back", name: "あなた", text: "箏の部屋に戻った",set: { bg: "./Ichinoma.png" }, se:"door_open",  nextIfFlags: [
+     { id: "r1_come_back", name: "あなた", text: "箏の部屋に戻った",set: { bg: "./Ichinoma.jpeg" }, se:"door_open",  nextIfFlags: [
         { flags: ["r1_add_spot"], next: "r1_inspect" },
         { flags: [], next: "r1_scene_hub" }],next: "r1_scene_hub" },
     

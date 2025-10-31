@@ -31,7 +31,7 @@ window.STORY_FIN = {
   // 章固有の情報(情報タブで表示)
   info: {
     fin_book_story: { 
-      title: "『小さな雫 -最終話-』", icon: "./chiisanashizuku_fin.png", image: "./chiisanashizuku_fin.png",
+      title: "『小さな雫 -最終話-』", icon: "./chiisanashizuku_fin.jpeg", image: "./chiisanashizuku_fin.jpeg",
       desc: "少女がお母さまを助けるために薬を作るお話。", 
       area: "白い部屋" 
     },
@@ -93,10 +93,10 @@ window.STORY_FIN = {
     },
 
     // 『小さな雫 -最終話-』
-    { id: "fin_look_book", name: " ", text: "床には本が落ちている", overlay: { sprite: "./chiisanashizuku_fin.png", withText: true }, next: "fin_look_book2" },
-    { id: "fin_look_book2", name: " ", text: "『小さな雫 -最終話-』",  overlay: { sprite: "./chiisanashizuku_fin.png", withText: true },next: "fin_look_book3" },
-    { id: "fin_look_book3", name: "みや", text: "これで、最後ですね…",  overlay: { sprite: "./chiisanashizuku_fin.png", withText: true },next: "fin_look_book4" },
-    { id: "fin_look_book4", name: "あなた", text: "読んでみるか…",  overlay: { sprite: "./chiisanashizuku_fin.png", withText: true },next: "fin_look_book5" },
+    { id: "fin_look_book", name: " ", text: "床には本が落ちている", overlay: { sprite: "./chiisanashizuku_fin.jpeg", withText: true }, next: "fin_look_book2" },
+    { id: "fin_look_book2", name: " ", text: "『小さな雫 -最終話-』",  overlay: { sprite: "./chiisanashizuku_fin.jpeg", withText: true },next: "fin_look_book3" },
+    { id: "fin_look_book3", name: "みや", text: "これで、最後ですね…",  overlay: { sprite: "./chiisanashizuku_fin.jpeg", withText: true },next: "fin_look_book4" },
+    { id: "fin_look_book4", name: "あなた", text: "読んでみるか…",  overlay: { sprite: "./chiisanashizuku_fin.jpeg", withText: true },next: "fin_look_book5" },
     { id: "fin_look_book5", name: " ", text: "本を開いた。",se:"paper", next: "fin_look_book6" },
     { id: "fin_look_book6", name: " ", text: "『家に帰った少女は早速お母さまへ薬を作ることにしました。』", next: "fin_look_book7" },
     { id: "fin_look_book7", name: " ", text: "『お母さまからもらった大事なエプロンをつけ、キッチンからボウルを持ってきます。』", next: "fin_look_book8" },
@@ -210,17 +210,17 @@ window.STORY_FIN = {
       { label: "はい", next: "fin_take" },
       { label: "いいえ", next: "fin_hub" }
     ]},
-    { id: "fin_take", name: " ", text: "尺八の部屋に移動した。", set:{ bg: "./sannnoma.png" }, next: "r3_hub" },
+    { id: "fin_take", name: " ", text: "尺八の部屋に移動した。", set:{ bg: "./sannnoma.jpeg" }, next: "r3_hub" },
     { id: "fin_look_ninoma", name: " ", text: "三味線の部屋に移動する?", choices: [
       { label: "はい", next: "fin_shami" },
       { label: "いいえ", next: "fin_hub" }
     ]},
-    { id: "fin_shami", name: " ", text: "三味線の部屋に移動した。",  set:{ bg: "./ninoma.png" },next: "r2_hub" },
+    { id: "fin_shami", name: " ", text: "三味線の部屋に移動した。",  set:{ bg: "./ninoma.jpeg" },next: "r2_hub" },
     { id: "fin_look_ichinoma", name: "あなた", text: "箏の部屋に移動する?", choices: [
       { label: "はい", next: "fin_koto" },
       { label: "いいえ", next: "fin_hub" }
     ]},
-    { id: "fin_koto", name: " ", text: "箏の部屋に移動した。",  set:{ bg: "./Ichinoma.png" },next: "r1_inspect" },
+    { id: "fin_koto", name: " ", text: "箏の部屋に移動した。",  set:{ bg: "./Ichinoma.jpeg" },next: "r1_inspect" },
 
     //調合開始
     { id: "fin_ready_medicine", name: "みや", text: "私達がやらなくちゃいけないことは…恐らく...", portrait:{ who:"みや", face:"normal", size:"500px" },next: "fin_start_medicine4" },
@@ -621,7 +621,7 @@ window.STORY_FIN = {
     { id: "fin_hidden_end32", name: "???", text: "「君たちは、私の時間を期待を、想いを無駄にした。」",overlay: { sprite: "./miya.angry.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end33" },
     { id: "fin_hidden_end33", name: "???", text: "「どうやら、君たちには…」",overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end34" },
     { id: "fin_hidden_end34", name: "???", text: "「…お仕置きが必要そうだね」",overlay: { sprite: "./miya.magic.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end35" },
-    { id: "fin_hidden_end35", name: "あなた", text: "…‼", se:"magic",set: { bg: "HIDDEN.png" },next: "fin_hidden_end36" },
+    { id: "fin_hidden_end35", name: "あなた", text: "…‼", se:"magic",set: { bg: "HIDDEN.jpeg" },next: "fin_hidden_end36" },
     { id: "fin_hidden_end36", name: " ", text: "瞬きをした瞬間───世界が変わった。", next: "fin_hidden_end37" },
     { id: "fin_hidden_end37", name: "あなた", text: "ここはお花畑…?でも、世界がモノクロだ。", next: "fin_hidden_end38" },
     { id: "fin_hidden_end38", name: " ", text: "隣にはみやが不安そうな顔でいる。", next: "fin_hidden_end39" },

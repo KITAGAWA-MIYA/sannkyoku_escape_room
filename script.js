@@ -20,7 +20,7 @@ window.STORY = {
         desk: "机の下に丸い影がある。みやによると、これは照明焼け...らしい。"
       }
     },
-    white_wall: {title: "白い壁",icon: "./WhiteRoom.png", image: "./WhiteRoom.png",desc: "真っ白い壁だ。外と繋がりそうな場所は見当たらない。みやが何か考えてる様子だったが…",area:"白い部屋",
+    white_wall: {title: "白い壁",icon: "./WhiteRoom.jpeg", image: "./WhiteRoom.jpeg",desc: "真っ白い壁だ。外と繋がりそうな場所は見当たらない。みやが何か考えてる様子だったが…",area:"白い部屋",
       notes: {
         eye: "真っ白い壁だ。外と繋がりそうな場所は見当たらない。まだ若干視線を感じる…気がする。"
       }
@@ -456,7 +456,7 @@ window.STORY = {
     { id: "intro_wall_open21", name: " ", text: "",set: { bg: "#FFF" },  next:"intro_wall_open22" },
     { id: "intro_wall_open22", name: "みや", text: "…え?", next:"intro_wall_open23" },
     { id: "intro_wall_open23", name: "あなた", text: "なんだこれ…", next:"intro_wall_open24" },
-    { id: "intro_wall_open24", name: " ", text: "",set: { bg: "./Three_Doors.png" },  next:"intro_wall_open25" },
+    { id: "intro_wall_open24", name: " ", text: "",set: { bg: "./Three_Doors.jpeg" },  next:"intro_wall_open25" },
     { id: "intro_wall_open25", name: "あなた", text: "…扉?", next:"intro_wall_open26" },
     { id: "intro_wall_open26", name: "みや",portrait:{ who:"みや", face:"confuse", size:"500px" }, text: "もしかして、出口でしょうか?", next:"intro_wall_open27" },
     { id: "intro_wall_open27", name: "あなた", portrait:{ who:"みや", face:"confuse", size:"500px" },text: "いや、だとしても3つも扉があるのはおかしくないか?", next:"intro_wall_open28" },

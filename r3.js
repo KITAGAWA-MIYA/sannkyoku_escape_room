@@ -111,7 +111,7 @@ window.STORY_R3 = {
 
     { id: "r3_from_intro", name: " ", set: { bg: "#FFF" }, text: "......", next: "r3_from_intro1" },
     { id: "r3_from_intro1", name: " ", text: "扉をくぐると空気が変わった――。",set:{bgm:"intro"}, next: "r3_from_intro2" },
-    { id: "r3_from_intro2", name: " ", set: { bg: "sannnoma.png" }, text: "天井からは人工の光、そして視界は緑に包まれる。", next: "r3_from_intro3" },
+    { id: "r3_from_intro2", name: " ", set: { bg: "sannnoma.jpeg" }, text: "天井からは人工の光、そして視界は緑に包まれる。", next: "r3_from_intro3" },
     { id: "r3_from_intro3", name: "あなた", text: "ここはまた、変わった雰囲気の部屋…だな。", next: "r3_from_intro4" },
     { id: "r3_from_intro4", name: "みや", text: "シャンデリアがあるので、外ではなさそうですね。",portrait:{ who:"みや", face:"confuse", size:"500px" }, next: "r3_from_intro5" },
     { id: "r3_from_intro5", name: "みや", text: "もしかして、この竹の壁って壁紙だったりします?",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "r3_from_intro6" },
@@ -614,7 +614,7 @@ window.STORY_R3 = {
     { id: "r3_bad_song5", name: "みや", text: "そ、そうか、床が土だから…",portrait:{ who:"みや", face:"fear", size:"500px" }, next: "r3_bad_song6" },
     { id: "r3_bad_song6", name: "あなた", text: "ま、まずい…!!!",portrait:{ who:"みや", face:"fear", size:"500px" }, next: "r3_bad_song7" },
     { id: "r3_bad_song7", name: " ", text: "......", set: { bg: "#000" },next: "r3_bad_song8" },
-    { id: "r3_bad_song8", name: "みや", text: "ゴホッ…みや…大丈夫…?", set: { bg: "sannnoma.png" },next: "r3_bad_song9" },
+    { id: "r3_bad_song8", name: "みや", text: "ゴホッ…みや…大丈夫…?", set: { bg: "sannnoma.jpeg" },next: "r3_bad_song9" },
     { id: "r3_bad_song9", name: "みや", text: "うぅ…口の中に砂が…", portrait:{ who:"みや", face:"fear", size:"500px" },next: "r3_bad_song10" },
     { id: "r3_bad_song10", name: "みや", text: "それに、全身に土埃が直撃して…若干痛いです…",portrait:{ who:"みや", face:"confuse", size:"500px" }, next: "r3_bad_song11" },
     { id: "r3_bad_song11", name: "あなた", text: "自分も…目が痛い…", next: "r3_bad_song12" },
@@ -709,10 +709,10 @@ window.STORY_R3 = {
     },
 
     //参の間⇒白い部屋
-    { id: "r3_shiro", name: "あなた", text: "白い部屋に戻った。",set: { bg: "./Three_Doors.png" },  se:"door_open",next: "intro_doors" },
+    { id: "r3_shiro", name: "あなた", text: "白い部屋に戻った。",set: { bg: "./Three_Doors.jpeg" },  se:"door_open",next: "intro_doors" },
     
     //白い部屋⇒参の間
-    { id: "r3_come_back", name: "あなた", text: "尺八の部屋に戻った。", set: { bg: "./sannnoma.png" }, se:"door_open", next: "r3_hub" },
+    { id: "r3_come_back", name: "あなた", text: "尺八の部屋に戻った。", set: { bg: "./sannnoma.jpeg" }, se:"door_open", next: "r3_hub" },
 
     //参の間⇒最終章へ
     { id: "r3_to_final", name: "あなた", text: "白い部屋に戻った。",set: { bg: "shiroima.png" }, se:"door_open",  nextIfFlags: [

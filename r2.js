@@ -104,7 +104,7 @@ window.STORY_R2 = {
   nodes: [
     // ===== 弐ノ間:導入 =====
     { id: "r2_from_intro", name: " ", set: { bg: "#FFF" }, text: "......", next: "r2_from_intro2" },
-    { id: "r2_from_intro2", name: " ", text: "扉をくぐると、途端に空気がひやりと湿り、肌を撫でる。",set:{bgm:"intro"}, set: { bg: "./ninoma.png" }, next: "r2_intro3" },
+    { id: "r2_from_intro2", name: " ", text: "扉をくぐると、途端に空気がひやりと湿り、肌を撫でる。",set:{bgm:"intro"}, set: { bg: "./ninoma.jpeg" }, next: "r2_intro3" },
     { id: "r2_intro3", name: "あなた", text: "さっきの部屋に比べると、随分と暗いな…", next: "r2_intro4" },
     { id: "r2_intro4", name: "みや", text: "そうですね…それに、さっきよりも肌寒さ感じます。",portrait:{ who:"みや", face:"confuse" }, next: "r2_intro5" },
     { id: "r2_intro5", name: "あなた", text: "障子、畳…さっきは箏があったけど、この部屋はより和要素が強い気がする。",portrait:{ who:"みや", face:"confuse" }, next: "r2_intro6" },
@@ -481,11 +481,11 @@ window.STORY_R2 = {
     { id: "r2_nazotoki_hint4", name: "あなた", text: "なるほど…ありがとう!!", portrait:{ who:"みや", face:"smile" }, next: "r2_hub" },
 
     // 白い部屋へ戻る
-    { id: "r2_shiro", name: "あなた", text: "白い部屋に戻った。", set: { bg: "./Three_Doors.png" }, se:"door_open",  nextIfFlags: [
+    { id: "r2_shiro", name: "あなた", text: "白い部屋に戻った。", set: { bg: "./Three_Doors.jpeg" }, se:"door_open",  nextIfFlags: [
         { flags: ["Red"], next: "sannnoma_kagi" },
         { flags: [], next: "intro_doors" }], next: "intro_doors" },
      //白い部屋⇒弐の間
-     { id: "r2_come_back", name: "あなた", text: "三味線の部屋に戻った", set: { bg: "./ninoma.png" },  se:"door_open",next: "r2_hub" },
+     { id: "r2_come_back", name: "あなた", text: "三味線の部屋に戻った", set: { bg: "./ninoma.jpeg" },  se:"door_open",next: "r2_hub" },
 
      { id: "r2_shiro_fin", name: "あなた", text: "白い部屋に戻った。", set: { bg: "./shiroima.png" }, se:"door_open", next: "fin_hub" },
 
@@ -586,7 +586,7 @@ window.STORY_R2 = {
     { id: "r2_candle_all_off33", name: "???", text: "…君もその子も、私の大好きなヒト。",overlay: { sprite: "./miya.mile.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "r2_candle_all_off34" },
     { id: "r2_candle_all_off34", name: "???", text: "ねぇ…もっと…", overlay: { sprite: "./miya.ormal.png", withText: true,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)" },next: "r2_candle_all_off35" },
     { id: "r2_candle_all_off35", name: "???", text: "私を楽しませて?", overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},next: "r2_candle_all_off36" },
-    { id: "r2_candle_all_off36",stopBgm:true, name: "あなた", text: "…!!!!", se:"magic",set: { bg: "./ninoma.png" }, next: "r2_candle_all_off37" },
+    { id: "r2_candle_all_off36",stopBgm:true, name: "あなた", text: "…!!!!", se:"magic",set: { bg: "./ninoma.jpeg" }, next: "r2_candle_all_off37" },
     { id: "r2_candle_all_off37", name: "あなた", text: "今の音…ってあれ?", next: "r2_candle_all_off38" },
     { id: "r2_candle_all_off38", name: "あなた", text: "(蠟燭の明かりが…戻ってる…?)", next: "r2_candle_all_off39" },
     { id: "r2_candle_all_off39", name: "みや", text: "…あれ?明かりが…",portrait:{ who:"みや", face:"fear" }, next: "r2_candle_all_off40" },
