@@ -8,11 +8,11 @@ window.STORY_FIN = {
       defaultX:"50%", 
       defaultY:"43%", 
       faces:{ 
-        normal:"miya.normal.png", 
-        smile:"miya.smile.png", 
-        kind:"miya.kind.png", 
-        fear:"miya.fear.png", 
-        confuse:"miya.confuse.png"
+        normal:"miya.normal.jpg", 
+        smile:"miya.smile.jpg", 
+        kind:"miya.kind.jpg", 
+        fear:"miya.fear.jpg", 
+        confuse:"miya.confuse.jpg"
       }
     },
     みや_bad:{ 
@@ -20,10 +20,10 @@ window.STORY_FIN = {
       defaultX:"50%", 
       defaultY:"43%",
       faces:{ 
-        normal:"miya.狂.png", 
-        angry:"miya.angry.狂.png", 
-        tear:"miya.tear.狂.png", 
-        smile:"miya.smile.狂.png"
+        normal:"miya.狂.jpg", 
+        angry:"miya.angry.狂.jpg", 
+        tear:"miya.tear.狂.jpg", 
+        smile:"miya.smile.狂.jpg"
       } 
     }
   },
@@ -88,7 +88,7 @@ window.STORY_FIN = {
           { id: "fin_ninoma", x: "40%", y: "12%", size: "48px", icon: "./kirakira.png", next: "fin_look_ninoma"},
           { id: "fin_sannoma", x: "83%", y: "30%", size: "48px", icon: "./kirakira.png", next: "fin_look_sannnoma"}
         ],
-        talk: { sprite: "./miya.stand.png", x: "72%", y: "72%", size: "501px", next: "fin_talk1" }
+        talk: { sprite: "./miya.stand.jpg", x: "72%", y: "72%", size: "501px", next: "fin_talk1" }
       }
     },
 
@@ -332,7 +332,7 @@ window.STORY_FIN = {
     { id: "fin_medicine_complete5", name: "あなた", text: "みや!!ちょっと来て!", next: "fin_medicine_complete6" },
     { id: "fin_medicine_complete6", name: "みや", text: "出来ましたか…?",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "fin_medicine_complete7" },
     { id: "fin_medicine_complete7", name: "みや", text: "っ!!凄い…!!綺麗に透き通っていますね…",portrait:{ who:"みや", face:"smile", size:"500px" }, next: "fin_medicine_complete8" },
-    { id: "fin_medicine_complete8", name: "あなた", text: "ふふ…まるで雪みたい。", portrait:{ who:"みや", face:"kind", size:"500px" },next: "fin_medicine_complete9" },
+    { id: "fin_medicine_complete8", name: "あなた", text: "ふふ…まるで鏡みたい。", portrait:{ who:"みや", face:"kind", size:"500px" },next: "fin_medicine_complete9" },
     { id: "fin_medicine_complete9", name: "みや", text: "それで…それを私達が飲む…で合ってましたっけ?",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "fin_medicine_complete10" },
     { id: "fin_medicine_complete10", name: "あなた", text: "うん、自分達が演奏者だとすれば、二人で分け合わないといけないと思う。",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "fin_medicine_complete11" },
     { id: "fin_medicine_complete11", name: "みや", text: "あの…突然なんですけど、",portrait:{ who:"みや", face:"confuse", size:"500px" }, next: "fin_medicine_complete12" },
@@ -612,15 +612,15 @@ window.STORY_FIN = {
     { id: "fin_hidden_end23", name: "あなた", text: "だ、誰!", next: "fin_hidden_end24" },
     { id: "fin_hidden_end24", name: "???", text: "「別に覚えなくてもいいよ。むしろ君たちには名前を覚えてもらいたくないな。」",set:{bgm:"kirarasan"} ,next: "fin_hidden_end25" },
     { id: "fin_hidden_end25", name: "みや", text: "…これ、見てください!!写真立ての人が!!", next: "fin_hidden_end26" },
-    { id: "fin_hidden_end26", name: "あなた", text: "…動いてる?",overlay: { sprite: "./miya.ormal.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end27" },
-    { id: "fin_hidden_end27", name: "???", text: "「あ…やっと気づいた?」",overlay: { sprite: "./miya.mile.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end28" },
-    { id: "fin_hidden_end28", name: "???", text: "「君たちのこと、ここからずっと見させてもらってたよ。」",overlay: { sprite: "./miya.ormal.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end29" },
-    { id: "fin_hidden_end29", name: "???", text: "「私は、君たちには期待していたんだけどな…きっといい演奏してくるって。」", overlay: { sprite: "./miya.shock.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end30" },
-    { id: "fin_hidden_end30", name: "???", text: "「それなのに……君たちは君たち自身で演奏を台無しにした。」",overlay: { sprite: "./miya.angry.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end31" },
-    { id: "fin_hidden_end31", name: "???", text: "「今回は期待はずれだったかな?」", overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"} ,next: "fin_hidden_end32" },
-    { id: "fin_hidden_end32", name: "???", text: "「君たちは、私の時間を期待を、想いを無駄にした。」",overlay: { sprite: "./miya.angry.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end33" },
-    { id: "fin_hidden_end33", name: "???", text: "「どうやら、君たちには…」",overlay: { sprite: "./miya.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end34" },
-    { id: "fin_hidden_end34", name: "???", text: "「…お仕置きが必要そうだね」",overlay: { sprite: "./miya.magic.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end35" },
+    { id: "fin_hidden_end26", name: "あなた", text: "…動いてる?",overlay: { sprite: "./miya.ormal.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end27" },
+    { id: "fin_hidden_end27", name: "???", text: "「あ…やっと気づいた?」",overlay: { sprite: "./miya.mile.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end28" },
+    { id: "fin_hidden_end28", name: "???", text: "「君たちのこと、ここからずっと見させてもらってたよ。」",overlay: { sprite: "./miya.ormal.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end29" },
+    { id: "fin_hidden_end29", name: "???", text: "「私は、君たちには期待していたんだけどな…きっといい演奏してくるって。」", overlay: { sprite: "./miya.shock.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end30" },
+    { id: "fin_hidden_end30", name: "???", text: "「それなのに……君たちは君たち自身で演奏を台無しにした。」",overlay: { sprite: "./miya.angry.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end31" },
+    { id: "fin_hidden_end31", name: "???", text: "「今回は期待はずれだったかな?」", overlay: { sprite: "./miya.ind.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"} ,next: "fin_hidden_end32" },
+    { id: "fin_hidden_end32", name: "???", text: "「君たちは、私の時間を期待を、想いを無駄にした。」",overlay: { sprite: "./miya.angry.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end33" },
+    { id: "fin_hidden_end33", name: "???", text: "「どうやら、君たちには…」",overlay: { sprite: "./miya.ind.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end34" },
+    { id: "fin_hidden_end34", name: "???", text: "「…お仕置きが必要そうだね」",overlay: { sprite: "./miya.magic.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end35" },
     { id: "fin_hidden_end35", name: "あなた", text: "…‼", se:"magic",set: { bg: "HIDDEN.png" },next: "fin_hidden_end36" },
     { id: "fin_hidden_end36", name: " ", text: "瞬きをした瞬間───世界が変わった。", next: "fin_hidden_end37" },
     { id: "fin_hidden_end37", name: "あなた", text: "ここはお花畑…?でも、世界がモノクロだ。", next: "fin_hidden_end38" },
@@ -651,11 +651,11 @@ window.STORY_FIN = {
     { id: "fin_hidden_end62", name: "三曲部員B", text: "へぇ…今度OBOGさんに聞いたらもっと詳細分かったりするんですかね…?", next: "fin_hidden_end63" },
     { id: "fin_hidden_end63", name: "三曲部員A", text: "確かに…!!今度会った時聞いてみよ!!", next: "fin_hidden_end64" },
     { id: "fin_hidden_end64", name: " ", text: "......", set: { bg: "#000" }, next: "fin_hidden_end65" },
-    { id: "fin_hidden_end65", name: "???", text: "…二人がどうなったのかって?", overlay: { sprite: "./みや.ormal.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end66" },
-    { id: "fin_hidden_end66", name: "???", text: "あれ?…どうして、君があの子たちのことを覚えているの?",overlay: { sprite: "./みや.angry.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end67" },
-    { id: "fin_hidden_end67", name: "???", text: "おかしいな…みんなの記憶から消してあげたんだけど。",overlay: { sprite: "./みや.shock.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end68" },
-    { id: "fin_hidden_end68", name: "???", text: "ふふ…心配しなくても大丈夫",overlay: { sprite: "./みや.ind.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end69" },
-    { id: "fin_hidden_end69", name: "???", text: "すぐ、分からなくしてあげるから", se:"magic",overlay: { sprite: "./みや.mile.png", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end_final" },
+    { id: "fin_hidden_end65", name: "???", text: "…二人がどうなったのかって?", overlay: { sprite: "./miya.ormal.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end66" },
+    { id: "fin_hidden_end66", name: "???", text: "あれ?…どうして、君があの子たちのことを覚えているの?",overlay: { sprite: "./miya.angry.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end67" },
+    { id: "fin_hidden_end67", name: "???", text: "おかしいな…みんなの記憶から消してあげたんだけど。",overlay: { sprite: "./miya.shock.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end68" },
+    { id: "fin_hidden_end68", name: "???", text: "ふふ…心配しなくても大丈夫",overlay: { sprite: "./miya.ind.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"},  next: "fin_hidden_end69" },
+    { id: "fin_hidden_end69", name: "???", text: "すぐ、分からなくしてあげるから", se:"magic",overlay: { sprite: "./miya.mile.jpg", withText: true ,size: "60vh",left: "75%", bottom: "0",transform: "translateX(-50%)"}, next: "fin_hidden_end_final" },
     { id: "fin_hidden_end_final", name: " ", text: "-SECRET END-", ui: { endScreen: true }, next: "fin_hidden_end_final2" },
     { id: "fin_hidden_end_final2", name: " ", text: " ", ui: { endScreen: true }, next: "__TITLE__" },
 

@@ -6,8 +6,8 @@ window.STORY = {
 
   //キャラ辞書
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png"}},
-    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png"} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpg", smile:"miya.smile.jpg", kind:"miya.kind.jpg", fear:"miya.fear.jpg", confuse:"miya.confuse.jpg"}},
+    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.jpg", angry:"miya.angry.狂.jpg", tear:"miya.tear.狂.jpg", smile:"miya.smile.狂.jpg"} }
  },
   info: {
     paper: {title: "紙",icon: "./paper.png", image: "./paper.png",desc: "白い紙。端が少し折れている。",area:"白い部屋",
@@ -207,7 +207,7 @@ window.STORY = {
         ]
        }
     ],
-    talk: { sprite:"./miya.stand.png", x:"30%", y:"72%", size:"501px", next:"intro_talk1" },
+    talk: { sprite:"./miya.stand.jpg", x:"30%", y:"72%", size:"501px", next:"intro_talk1" },
    
     requireFlags: ["paper_backtext", "circle_info", "intro_wall_みや"],
     completeNext: "intro_move"
@@ -340,9 +340,9 @@ window.STORY = {
     { id: "intro_talk_wall_alt3_23", name: "???", text: "…大丈夫ですか?", next: "intro_talk_wall_alt3_24" },
     { id: "intro_talk_wall_alt3_24", name: "あなた", text: "(みや…‼動けるように…!!!)", next: "intro_talk_wall_alt3_25" },
     { id: "intro_talk_wall_alt3_25", name: "あなた", text: "……",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_26" },
-    { id: "intro_talk_wall_alt3_26", name: "みや(?)", text: "(……みや?)",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_27" },
+    { id: "intro_talk_wall_alt3_26", name: "あなた", text: "(……みや?)",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_27" },
     { id: "intro_talk_wall_alt3_27", name: "みや(?)", text: "――安心して。",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_28" },
-    { id: "intro_talk_wall_alt3_28", name: "みや(?)", text: "(その恰好は――)",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_29" },
+    { id: "intro_talk_wall_alt3_28", name: "あなた", text: "(その恰好は――)",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_29" },
     { id: "intro_talk_wall_alt3_29", name: "みや(?)", text: "――動けるようにしてあげる。",portrait:{ who:"みや_bad", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_30" },
     { id: "intro_talk_wall_alt3_30", name: "みや", text: "大丈夫ですか!!!",portrait:{ who:"みや", face:"fear", size:"500px" }, next: "intro_talk_wall_alt3_31" },
     { id: "intro_talk_wall_alt3_31", name: "あなた", text: "っ!!?",portrait:{ who:"みや", face:"fear", size:"500px" }, next: "intro_talk_wall_alt3_32" },
@@ -360,8 +360,8 @@ window.STORY = {
     { id: "intro_talk_wall_alt3_43", name: "あなた", text: "大丈夫‼大丈夫‼考え事してただけだから‼", portrait:{ who:"みや", face:"confuse", size:"500px" },next: "intro_talk_wall_alt3_44" },
     { id: "intro_talk_wall_alt3_44", name: "あなた", text: "そ、それよりさ、みやの声ってすごい通るよね", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_talk_wall_alt3_45" },
     { id: "intro_talk_wall_alt3_45", name: "みや", text: "そうですか?自分ではあまり分からないですが…", portrait:{ who:"みや", face:"normal", size:"500px" },next: "intro_talk_wall_alt3_46" },
-    { id: "intro_talk_wall_alt3_46", name: "あなた", text: "まあ、もし声が通らなかったときは、一発殴ろうかなと思ってたので",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_47" },
-    { id: "intro_talk_wall_alt3_47", name: "みや", text: "な、殴る!?",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_48" },
+    { id: "intro_talk_wall_alt3_46", name: "みや", text: "まあ、もし声が通らなかったときは、一発殴ろうかなと思ってたので",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_47" },
+    { id: "intro_talk_wall_alt3_47", name: "あなた", text: "な、殴る!?",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_48" },
     { id: "intro_talk_wall_alt3_48", name: "みや", text: "はい!ビンタかグーパンか、あるいはキックか…",portrait:{ who:"みや", face:"kind", size:"500px" }, next: "intro_talk_wall_alt3_49" },
     { id: "intro_talk_wall_alt3_49", name: "あなた", text: "ええ…怖…",portrait:{ who:"みや", face:"normal", size:"500px" }, next: "intro_talk_wall_alt3_50" },
     { id: "intro_talk_wall_alt3_50", name: "みや", text: "…ふふ、冗談ですよ。殴る訳ないじゃないですか。", portrait:{ who:"みや", face:"smile", size:"500px" },next: "intro_talk_wall_alt3_51" },
@@ -474,7 +474,7 @@ window.STORY = {
         { id:"Door_ni", x:"38%", y:"12%", size:"48px",  icon:"./kirakira.png",next:"door_ni"},
         { id:"Door_san",   x:"88%", y:"30%", size:"48px",  icon:"./kirakira.png", next:"door_san"}
          ],
-       talk: { sprite:"./miya.stand.png", x:"24%", y:"75%", size:"501px", next:"intro_talk1" },
+       talk: { sprite:"./miya.stand.jpg", x:"24%", y:"75%", size:"501px", next:"intro_talk1" },
      },
     },
 

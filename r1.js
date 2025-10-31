@@ -5,8 +5,8 @@
 window.STORY_R1 = {
   meta: { areaName: "箏の部屋" },
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png"}},
-    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png"} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpg", smile:"miya.smile.jpg", kind:"miya.kind.jpg", fear:"miya.fear.jpg", confuse:"miya.confuse.jpg"}},
+    みや_bad:{ defaultSize:"360px", faces:{ normal:"miya.狂.jpg", angry:"miya.angry.狂.jpg", tear:"miya.tear.狂.jpg", smile:"miya.smile.狂.jpg"} }
  },
 
   // 章固有の情報（情報タブで表示）
@@ -68,7 +68,7 @@ window.STORY_R1 = {
       area: "箏の部屋" 
     },
     posta_kirara: { 
-      title: "謎のポスター", icon: "./deep_bule.png", image: "./deep_bule.png",
+      title: "謎のポスター", icon: "./deep_bule.jpg", image: "./deep_bule.jpg",
       desc: "『ディープブルーにキラめいて』と書かれたアイドルのポスター。掛け軸の裏に隠されていた。", 
       notes: {
         opening: "『ディープブルーにキラめいて』と書かれたアイドルのポスター。このアイドルの衣装を身にまとったみやを見た。"
@@ -100,7 +100,7 @@ window.STORY_R1 = {
         spots: [
           { id: "kurokoto", x: "55%", y: "57%", size: "48px", icon: "./kirakira.png", next: "r1_koto" }
         ],
-        talk: { sprite: "./miya.stand.png", x: "10%", y: "72%", size: "501px", next: "r1_talk1" }
+        talk: { sprite: "./miya.stand.jpg", x: "10%", y: "72%", size: "501px", next: "r1_talk1" }
       }
     },
 
@@ -127,16 +127,16 @@ window.STORY_R1 = {
       explore: {
         spots: [
           { id: "r1_uekibachi", x: "95%", y: "54%", size: "48px", icon: "./kirakira.png", next: "r1_ki", nextRepeat: "r1_ki_again" },
-          { id: "r1_shuuji", x: "53%", y: "83%", size: "48px", icon: "./kirakira.png", next: "r1_fude" },
-          { id: "r1_honn", x: "28%", y: "70%", size: "48px", icon: "./kirakira.png", next: "r1_book_glasses", nextRepeat: "r1_book_glasses_again" },
-          { id: "r1_Kakejiku", x: "47%", y: "10%", size: "48px", icon: "./kirakira.png", next: "r1_kakejiku" },
-          { id: "r1_ka_tenn", x: "32%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_white_hirahira", nextRepeat: "r1_white_hirahira_again" },
-          { id: "r1_anndonn", x: "40%", y: "37%", size: "48px", icon: "./kirakira.png", next: "r1_light", nextRepeat: "r1_light_again" },
-          { id: "r1_book_boxes", x: "20%", y: "45%", size: "48px", icon: "./kirakira.png", next: "r1_honndana", nextRepeat: "r1_honndana_again" },
-          { id: "r1_kazari", x: "16%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_hachi_binn_kami", nextRepeat: "r1_hachi_binn_kami_again" },
+          { id: "r1_shuuji", x: "52%", y: "81%", size: "48px", icon: "./kirakira.png", next: "r1_fude" },
+          { id: "r1_honn", x: "26%", y: "68%", size: "48px", icon: "./kirakira.png", next: "r1_book_glasses", nextRepeat: "r1_book_glasses_again" },
+          { id: "r1_Kakejiku", x: "45%", y: "10%", size: "48px", icon: "./kirakira.png", next: "r1_kakejiku" },
+          { id: "r1_ka_tenn", x: "30%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_white_hirahira", nextRepeat: "r1_white_hirahira_again" },
+          { id: "r1_anndonn", x: "38%", y: "37%", size: "48px", icon: "./kirakira.png", next: "r1_light", nextRepeat: "r1_light_again" },
+          { id: "r1_book_boxes", x: "17%", y: "45%", size: "48px", icon: "./kirakira.png", next: "r1_honndana", nextRepeat: "r1_honndana_again" },
+          { id: "r1_kazari", x: "12%", y: "20%", size: "48px", icon: "./kirakira.png", next: "r1_hachi_binn_kami", nextRepeat: "r1_hachi_binn_kami_again" },
           { id: "kuro_urushi", x: "55%", y: "57%", size: "48px", icon: "./kirakira.png", next: "r1_13genn" }
         ],
-        talk: { sprite: "./miya.stand.png", x: "10%", y: "72%", size: "501px", next: "r1_talk1" }
+        talk: { sprite: "./miya.stand.jpg", x: "10%", y: "72%", size: "501px", next: "r1_talk1" }
       }
     },
 

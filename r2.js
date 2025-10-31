@@ -2,8 +2,8 @@
 window.STORY_R2 = {
   meta: { areaName: "三味線の部屋" },
   chars:{
-    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.png", smile:"miya.smile.png", kind:"miya.kind.png", fear:"miya.fear.png", confuse:"miya.confuse.png",ormal:"./kirara.normal.png",mile:"./kirara_smile.png",ind:"./kirara_kind.png"}},
-    みや_bad:{ defaultSize:"500px",defaultX:"50%", defaultY:"43%",  faces:{ normal:"miya.狂.png", angry:"miya.angry.狂.png", tear:"miya.tear.狂.png", smile:"miya.smile.狂.png",} }
+    みや:{ defaultSize:"500px", defaultX:"50%", defaultY:"43%", faces:{ normal:"miya.normal.jpg", smile:"miya.smile.jpg", kind:"miya.kind.jpg", fear:"miya.fear.jpg", confuse:"miya.confuse.jpg",ormal:"./kirara.normal.jpg",mile:"./kirara_smile.jpg",ind:"./kirara_kind.jpg"}},
+    みや_bad:{ defaultSize:"500px",defaultX:"50%", defaultY:"43%",  faces:{ normal:"miya.狂.jpg", angry:"miya.angry.狂.jpg", tear:"miya.tear.狂.jpg", smile:"miya.smile.狂.jpg",} }
  },
   info: {
     hekiga: { 
@@ -122,18 +122,18 @@ window.STORY_R2 = {
             {flags:["r2_candle_backup"],next:"r2_open_case"},
             {flags:[],next:"r2_try_code_hub"}
           ] },
-          { id:"r2_torikago", x:"88%", y:"25%", size:"48px", icon:"./kirakira.png", next:"r2_look_torikago", nextRepeat:"r2_look_torikago_again" },
+          { id:"r2_torikago", x:"87%", y:"25%", size:"48px", icon:"./kirakira.png", next:"r2_look_torikago", nextRepeat:"r2_look_torikago_again" },
           { id:"r2_tennkei", x:"20%", y:"20%", size:"48px", icon:"./kirakira.png", next:"r2_look_tennkei", nextRepeat:"r2_hub" },
           { id:"r2_doll1", x:"35%", y:"55%", size:"48px", icon:"./kirakira.png", next:"r2_look_doll1", nextRepeat:"r2_look_doll1_again" },
-          { id:"r2_doll2", x:"23%", y:"53%", size:"48px", icon:"./kirakira.png", next:"r2_look_doll2", nextRepeat:"r2_look_doll2_again" },
+          { id:"r2_doll2", x:"12%", y:"53%", size:"48px", icon:"./kirakira.png", next:"r2_look_doll2", nextRepeat:"r2_look_doll2_again" },
           { id:"r2_doll3", x:"80%", y:"53%", size:"48px", icon:"./kirakira.png", next:"r2_look_doll3", nextRepeat:"r2_look_doll3_again" },
           { id:"r2_tuner", x:"24%", y:"82%", size:"48px", icon:"./kirakira.png", next:"r2_look_tuner", nextRepeat:"r2_hub" },
-          { id:"r2_manual", x:"60%", y:"64%", size:"48px", icon:"./kirakira.png", next:"r2_shami_manual", nextRepeat:"r2_shami_manual_again" },
+          { id:"r2_manual", x:"60%", y:"62%", size:"48px", icon:"./kirakira.png", next:"r2_shami_manual", nextRepeat:"r2_shami_manual_again" },
           { id:"r2_look_shouji", x:"60%", y:"20%", size:"48px", icon:"./kirakira.png", next:"r2_shouji", nextRepeat:"r2_shouji_again" },
           { id:"r2_look_kagi", x:"95%", y:"40%", size:"48px", icon:"./kirakira.png", next:"r2_kagi", nextRepeat:"r2_kagi_again" },
-          { id:"r2_look_daliy", x:"3%", y:"50%", size:"48px", icon:"./kirakira.png", next:"r2_nikki", nextRepeat:"r2_nikki_again" },
+          { id:"r2_look_daliy", x:"2%", y:"50%", size:"48px", icon:"./kirakira.png", next:"r2_nikki", nextRepeat:"r2_nikki_again" },
         ],
-        talk: { sprite:"./miya.stand.png", x:"12%", y:"75%", size:"501px", next:"r2_talk_みや1" },
+        talk: { sprite:"./miya.stand.jpg", x:"23%", y:"75%", size:"501px", next:"r2_talk_みや1" },
       }
     },
 
